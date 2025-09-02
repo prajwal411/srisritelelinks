@@ -11,7 +11,7 @@ export function Features() {
 
       <div className="grid gap-6 md:grid-cols-3">
         {/* Genuine Products */}
-        <Card>
+        <Card className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
           <CardHeader>
             <p className="text-[11px] tracking-widest text-neutral-400">AUTHENTICITY</p>
             <CardTitle className="mt-1 text-xl text-white">✅ 100% Genuine Products</CardTitle>
@@ -22,7 +22,7 @@ export function Features() {
         </Card>
 
         {/* Best Prices */}
-        <Card>
+        <Card className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
           <CardHeader>
             <p className="text-[11px] tracking-widest text-neutral-400">AFFORDABILITY</p>
             <CardTitle className="mt-1 text-xl text-white">💰 Best Market Prices</CardTitle>
@@ -33,7 +33,7 @@ export function Features() {
         </Card>
 
         {/* Customer Support */}
-        <Card>
+        <Card className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
           <CardHeader>
             <p className="text-[11px] tracking-widest text-neutral-400">SUPPORT</p>
             <CardTitle className="mt-1 text-xl text-white">🤝 Expert Customer Service</CardTitle>

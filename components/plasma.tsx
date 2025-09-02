@@ -5,6 +5,14 @@ import { useEffect, useRef } from "react"
 import { Renderer, Program, Mesh, Triangle } from "ogl"
 import "./Plasma.css"
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      div: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+    }
+  }
+}
+
 interface PlasmaProps {
   color?: string
   speed?: number
@@ -12,6 +20,7 @@ interface PlasmaProps {
   scale?: number
   opacity?: number
   mouseInteractive?: boolean
+  className?: string
 }
 
 const hexToRgb = (hex: string): [number, number, number] => {
@@ -98,6 +107,7 @@ void main() {
 
 export const Plasma: React.FC<PlasmaProps> = ({
   color = "#ffffff",
+  className = "",
   speed = 1,
   direction = "forward",
   scale = 1,
@@ -118,13 +128,19 @@ export const Plasma: React.FC<PlasmaProps> = ({
     const customColorRgb = color ? hexToRgb(color) : [1, 1, 1]
     const directionMultiplier = direction === "reverse" ? -1.0 : 1.0
 
-    // Lower DPR on mobile/iOS
-    const renderer = new Renderer({
-      webgl: 2,
-      alpha: true,
-      antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2) * (isIOS || isMobile ? 0.5 : 1),
-    })
+    let renderer
+    try {
+      // Lower DPR on mobile/iOS
+      renderer = new Renderer({
+        webgl: 2,
+        alpha: true,
+        antialias: false,
+        dpr: Math.min(window.devicePixelRatio || 1, 2) * (isIOS || isMobile ? 0.5 : 1),
+      })
+    } catch (error) {
+      console.warn('WebGL 2 not supported:', error)
+      return
+    }
     const gl = renderer.gl
     const canvas = gl.canvas as HTMLCanvasElement
     canvas.style.display = "block"
@@ -213,7 +229,12 @@ export const Plasma: React.FC<PlasmaProps> = ({
     }
   }, [color, speed, direction, scale, opacity, mouseInteractive])
 
-  return <div ref={containerRef} className="plasma-container pointer-events-none will-change-transform" />
+  return (
+    <div
+      ref={containerRef}
+      className={`plasma-container pointer-events-none will-change-transform absolute inset-0 ${className || ''}`}
+    />
+  )
 }
 
 export default Plasma

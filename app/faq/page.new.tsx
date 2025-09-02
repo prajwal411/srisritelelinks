@@ -1,5 +1,5 @@
+import { Footer } from "@/components/footer"
 import { SiteHeader } from "@/components/site-header"
-import { AppverseFooter } from "@/components/appverse-footer"
 
 export default function FAQPage() {
   return (
@@ -59,83 +59,41 @@ export default function FAQPage() {
 
                 <section className="space-y-3">
                   <h2 className="text-2xl font-semibold text-white">
-                    3. Do you work with existing CAD files or need product samples?
+                    5. Can I exchange my old phone?
                   </h2>
                   <p className="text-neutral-300">
-                    We can work with both. If you have CAD or 3D models, we can import and refine them. If not, we can
-                    create models from physical product samples or detailed reference images.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">4. How do you price your services?</h2>
-                  <p className="text-neutral-300">
-                    Pricing is based on animation length, complexity, number of renders, and modeling requirements. You
-                    can view our detailed pricing on our{" "}
-                    <a href="/pricing" className="text-lime-300 underline">
-                      pricing page
-                    </a>
-                    .
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">5. Can we request changes after delivery?</h2>
-                  <p className="text-neutral-300">
-                    Yes. All revisions are covered under our{" "}
-                    <a href="/revisions" className="text-lime-300 underline">
-                      revision policy
-                    </a>
-                    , which ensures smooth updates without unexpected scope creep.
+                    Yes, we offer exchange options for old smartphones. The exchange value will depend on your phone's
+                    condition, age, and market value. Visit our store for a free evaluation.
                   </p>
                 </section>
 
                 <section className="space-y-3">
                   <h2 className="text-2xl font-semibold text-white">
-                    6. Will the renders match our brand’s visual style?
+                    6. Do you offer home delivery?
                   </h2>
                   <p className="text-neutral-300">
-                    Absolutely. We customize lighting, materials, camera angles, and animation pacing to fit your
-                    brand’s identity and marketing needs.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">7. What formats do you deliver in?</h2>
-                  <p className="text-neutral-300">
-                    We typically deliver in MP4 (H.264) for videos and high-resolution PNG/JPG for stills. Other formats
-                    like MOV, ProRes, or transparent-background renders are available on request.
+                    Yes, we offer free home delivery within Chickballapur city limits. For locations outside the city,
+                    delivery charges may apply.
                   </p>
                 </section>
 
                 <section className="space-y-3">
                   <h2 className="text-2xl font-semibold text-white">
-                    8. Can you handle large-scale projects or bulk renders?
+                    7. What accessories do you sell?
                   </h2>
                   <p className="text-neutral-300">
-                    Yes, we regularly work on bulk orders for 10+ animations or 50+ renders. We optimize workflows to
-                    maintain quality and meet tight deadlines.
+                    We offer a wide range of genuine accessories including chargers, earphones, cases/covers,
+                    screen protectors, and power banks for all major smartphone brands.
                   </p>
                 </section>
 
                 <section className="space-y-3">
                   <h2 className="text-2xl font-semibold text-white">
-                    9. Do you offer creative direction or only technical execution?
+                    8. Do you provide installation services?
                   </h2>
                   <p className="text-neutral-300">
-                    We do both. Our team can develop creative concepts, storyboards, and camera moves, or simply execute
-                    your pre-approved vision.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">10. How do we get started?</h2>
-                  <p className="text-neutral-300">
-                    Simply{" "}
-                    <a href="/contact" className="text-lime-300 underline">
-                      contact us
-                    </a>{" "}
-                    with your project details, references, and timeline. We’ll provide a proposal and next steps.
+                    Yes, we provide free installation of screen guards and help set up your new device including
+                    data transfer from your old phone if needed.
                   </p>
                 </section>
               </div>
@@ -143,7 +101,7 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-      <AppverseFooter />
+      <Footer />
     </>
   )
 }

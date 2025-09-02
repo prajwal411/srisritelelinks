@@ -1,9 +1,12 @@
+import { Card, CardContent } from "@/components/ui/card"
+import Script from "next/script"
+
 export default function AboutPage() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Sri Tele Links",
-    url: "/",
+    url: "/about",
     logo: "/icons/skitbit-white.svg",
     description:
       "Sri Tele Links is a trusted mobile phone retailer in Chickballapur offering the latest smartphones and genuine accessories from Realme, Oppo, Vivo, Apple, and Samsung.",
@@ -21,16 +24,16 @@ export default function AboutPage() {
         telephone: "+91-9035101337",
         contactType: "customer service",
         email: "lalithasripad@gmail.com",
-        areaServed: "Chickballapur",
+        areaServed: "Chickballapur"
       },
       {
         "@type": "ContactPoint",
         telephone: "+91-9886872388",
         contactType: "customer service",
-        areaServed: "Chickballapur",
-      },
+        areaServed: "Chickballapur"
+      }
     ],
-    areaServed: [{ "@type": "Place", name: "Chickballapur" }],
+    areaServed: [{ "@type": "Place", name: "Chickballapur" }]
   }
 
   return (

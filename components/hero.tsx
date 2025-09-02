@@ -3,12 +3,24 @@ import Image from "next/image"
 import LazyVideo from "./lazy-video"
 
 export function Hero() {
-  const buttonNew = (
-    <Button asChild className="rounded-full bg-lime-400 px-6 text-black hover:bg-lime-300">
-      <a href="https://wa.me/9035101337" target="_blank" rel="noopener noreferrer">
-        WhatsApp Us
-      </a>
-    </Button>
+  const ctaButtons = (
+    <div className="flex gap-4 flex-wrap justify-center">
+      <Button asChild className="rounded-full bg-blue-600 px-6 text-white hover:bg-blue-500">
+        <a href="tel:+919035101337">
+          📱 Call Now
+        </a>
+      </Button>
+      <Button asChild className="rounded-full bg-green-600 px-6 text-white hover:bg-green-500">
+        <a href="https://wa.me/9035101337" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp Us
+        </a>
+      </Button>
+      <Button asChild className="rounded-full bg-slate-800 px-6 text-white hover:bg-slate-700">
+        <a href="#products">
+          🛍️ View Products
+        </a>
+      </Button>
+    </div>
   )
 
   return (
@@ -30,7 +42,7 @@ export function Hero() {
             <span className="block text-lime-300 drop-shadow-[0_0_20px_rgba(132,204,22,0.35)]">SMARTPHONES</span>
             <span className="block">GENUINE • AFFORDABLE • TRUSTED</span>
           </h1>
-          <div className="mt-6">{buttonNew}</div>
+          <div className="mt-6">{ctaButtons}</div>
 
           {/* Phone grid mimic */}
           <div className="mt-10 grid w-full gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
