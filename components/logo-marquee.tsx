@@ -9,19 +9,25 @@ export function LogoMarquee() {
 
   // Logo data with colors and content
   const logos = [
-    { name: "Apple", content: "APPLE", color: "text-neutral-300" },
-    { name: "Samsung", content: "SAMSUNG", color: "text-neutral-300" },
-    { name: "Realme", content: "REALME", color: "text-neutral-300" },
-    { name: "Oppo", content: "OPPO", color: "text-neutral-300" },
-    { name: "Vivo", content: "VIVO", color: "text-neutral-300" },
+    { name: "Intel", content: "intel", color: "text-neutral-300" },
+    { name: "MongoDB", content: "🟢", color: "text-green-500" },
+    { name: "Skitbit", content: "image", color: "text-neutral-300", image: "/images/skitbit-subtle-logo.png" },
+    { name: "VK", content: "VK", color: "text-white", bg: "bg-blue-500" },
+    { name: "TechCrunch", content: "TC", color: "text-neutral-300" },
+    { name: "MailChimp", content: "🐵", color: "text-yellow-500" },
+    { name: "ESJ", content: "image", color: "text-neutral-300", image: "/images/esj-subtle-logo.png" },
+    { name: "Kickstarter", content: "K", color: "text-white", bg: "bg-green-500" },
   ]
 
   const secondRowLogos = [
-    { name: "Realme", content: "REALME", color: "text-neutral-300" },
-    { name: "Oppo", content: "OPPO", color: "text-neutral-300" },
-    { name: "Vivo", content: "VIVO", color: "text-neutral-300" },
-    { name: "Apple", content: "APPLE", color: "text-neutral-300" },
-    { name: "Samsung", content: "SAMSUNG", color: "text-neutral-300" },
+    { name: "StumbleUpon", content: "🔴", color: "text-red-500" },
+    { name: "Microsoft", content: "⊞", color: "text-neutral-400" },
+    { name: "CleanMyMac", content: "🌈", color: "text-purple-400" },
+    { name: "Google", content: "G", color: "text-neutral-300" },
+    { name: "Behance", content: "Be", color: "text-white", bg: "bg-blue-500" },
+    { name: "Apple", content: "🍎", color: "text-neutral-300" },
+    { name: "TransferWise", content: "✓", color: "text-white", bg: "bg-green-500" },
+    { name: "Medium", content: "M", color: "text-neutral-300" },
   ]
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
@@ -58,10 +64,12 @@ export function LogoMarquee() {
         {/* Header */}
         <div className="flex flex-col items-center justify-between mb-12 sm:flex-row sm:items-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-left">
-            Brands we <span className="text-lime-300">deal in</span>
+            Meet our <span className="text-lime-300">top-tier</span>
+            <br />
+            customers
           </h2>
           <Button variant="outline" className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced bg-transparent">
-            View Products
+            Learn More
           </Button>
         </div>
 

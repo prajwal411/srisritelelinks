@@ -1,101 +1,72 @@
+"use client"
+
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 
-interface Phone {
+type Phone = {
+  brand: string
   name: string
+  specs: string
   image: string
-  specs: {
-    storage: string
-    camera: string
-    battery: string
-  }
 }
 
-const featuredPhones: Phone[] = [
+const PHONES: Phone[] = [
   {
+    brand: "Apple",
     name: "iPhone 16 Pro Max",
-    image: "/images/phones/iphone-16-pro.jpg",
-    specs: {
-      storage: "256GB/512GB/1TB",
-      camera: "48MP Main + 12MP Ultra Wide",
-      battery: "4422mAh",
-    },
+    specs: "A18 Pro, ProMotion 120Hz, Tetraprism Zoom",
+    image: "/apple-iphone-16-pro-max.jpg",
   },
   {
-    name: "Samsung Galaxy S25 Ultra",
-    image: "/images/phones/s25-ultra.jpg",
-    specs: {
-      storage: "256GB/512GB/1TB",
-      camera: "200MP Main + 12MP Ultra Wide",
-      battery: "5000mAh",
-    },
+    brand: "Samsung",
+    name: "Galaxy S25 Ultra",
+    specs: "200MP, Snapdragon, S Pen",
+    image: "/samsung-galaxy-s25-ultra.jpg",
   },
-  {
-    name: "Realme GT7 Pro",
-    image: "/images/phones/gt7-pro.jpg",
-    specs: {
-      storage: "256GB/512GB",
-      camera: "108MP Main + 8MP Ultra Wide",
-      battery: "5000mAh",
-    },
-  },
-  {
-    name: "Oppo Find X8 Pro",
-    image: "/images/phones/find-x8-pro.jpg",
-    specs: {
-      storage: "256GB/512GB",
-      camera: "50MP Main + 50MP Ultra Wide",
-      battery: "5000mAh",
-    },
-  },
-  {
-    name: "Vivo X100 Ultra",
-    image: "/images/phones/x100-ultra.jpg",
-    specs: {
-      storage: "256GB/512GB",
-      camera: "50MP Main + 50MP Ultra Wide",
-      battery: "5400mAh",
-    },
-  },
+  { brand: "Realme", name: "GT7 Pro 5G", specs: "Flagship SoC, 120Hz AMOLED", image: "/realme-gt7-pro.jpg" },
+  { brand: "Oppo", name: "Find X8 Pro", specs: "Hasselblad tuned cameras", image: "/oppo-find-x8-pro.png" },
+  { brand: "Vivo", name: "X100 Ultra", specs: "ZEISS optics, periscope", image: "/vivo-x100-ultra.png" },
 ]
+
+function waLink(model: string) {
+  const text = encodeURIComponent(`Hello Sri Tele Links, I want to enquire about ${model}.`)
+  return `https://wa.me/9035101337?text=${text}`
+}
 
 export function FeaturedPhones() {
   return (
-    <section id="products" className="container mx-auto px-4 py-16">
-      <h2 className="mb-8 text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
-        Featured Models
+    <section className="container mx-auto px-4 py-12 sm:py-16">
+      <h2 className="mb-8 text-center text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+        Featured Phones
       </h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {featuredPhones.map((phone, index) => (
-          <Card key={index} className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {PHONES.map((p) => (
+          <Card key={p.name} className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
             <CardHeader>
-              <CardTitle className="text-xl text-white">{phone.name}</CardTitle>
+              <CardTitle className="text-white text-lg">
+                {p.brand} — {p.name}
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                  <Image
-                    src={phone.image}
-                    alt={phone.name}
-                    fill
-                    className="object-cover"
-                    priority={index < 2}
-                  />
-                </div>
-                <div className="space-y-2 text-sm text-neutral-300">
-                  <p>📱 Storage: {phone.specs.storage}</p>
-                  <p>📸 Camera: {phone.specs.camera}</p>
-                  <p>🔋 Battery: {phone.specs.battery}</p>
-                </div>
-                <Button asChild className="w-full bg-green-600 hover:bg-green-500">
-                  <a
-                    href={`https://wa.me/9035101337?text=Hi, I'm interested in ${phone.name}. Please share more details.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    💬 Enquire on WhatsApp
+            <CardContent className="space-y-3">
+              <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-white/10">
+                <Image
+                  src={p.image || "/placeholder.svg"}
+                  alt={`${p.name}`}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 360px, 90vw"
+                />
+              </div>
+              <p className="text-sm text-neutral-300">{p.specs}</p>
+              <div className="flex gap-2">
+                <Button asChild className="rounded-full">
+                  <a href={waLink(p.name)} target="_blank" rel="noopener noreferrer">
+                    Enquire on WhatsApp
                   </a>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full bg-transparent">
+                  <a href="/products">View All</a>
                 </Button>
               </div>
             </CardContent>

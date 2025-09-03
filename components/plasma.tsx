@@ -5,14 +5,6 @@ import { useEffect, useRef } from "react"
 import { Renderer, Program, Mesh, Triangle } from "ogl"
 import "./Plasma.css"
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      div: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-    }
-  }
-}
-
 interface PlasmaProps {
   color?: string
   speed?: number
@@ -20,7 +12,6 @@ interface PlasmaProps {
   scale?: number
   opacity?: number
   mouseInteractive?: boolean
-  className?: string
 }
 
 const hexToRgb = (hex: string): [number, number, number] => {
@@ -107,7 +98,6 @@ void main() {
 
 export const Plasma: React.FC<PlasmaProps> = ({
   color = "#ffffff",
-  className = "",
   speed = 1,
   direction = "forward",
   scale = 1,
@@ -128,25 +118,21 @@ export const Plasma: React.FC<PlasmaProps> = ({
     const customColorRgb = color ? hexToRgb(color) : [1, 1, 1]
     const directionMultiplier = direction === "reverse" ? -1.0 : 1.0
 
-    let renderer
-    try {
-      // Lower DPR on mobile/iOS
-      renderer = new Renderer({
-        webgl: 2,
-        alpha: true,
-        antialias: false,
-        dpr: Math.min(window.devicePixelRatio || 1, 2) * (isIOS || isMobile ? 0.5 : 1),
-      })
-    } catch (error) {
-      console.warn('WebGL 2 not supported:', error)
-      return
-    }
+    // Lower DPR on mobile/iOS
+    const renderer = new Renderer({
+      webgl: 2,
+      alpha: true,
+      antialias: false,
+      dpr: Math.min(window.devicePixelRatio || 1, 2) * (isIOS || isMobile ? 0.5 : 1),
+    })
     const gl = renderer.gl
     const canvas = gl.canvas as HTMLCanvasElement
     canvas.style.display = "block"
     canvas.style.width = "100%"
     canvas.style.height = "100%"
-    containerRef.current.appendChild(canvas)
+
+    const containerEl = containerRef.current
+    containerEl.appendChild(canvas)
 
     const geometry = new Triangle(gl)
 
@@ -171,21 +157,23 @@ export const Plasma: React.FC<PlasmaProps> = ({
 
     // --- Mouse interaction (skip on iOS) ---
     const handleMouseMove = (e: MouseEvent) => {
-      if (isIOS || !mouseInteractive) return
-      const rect = containerRef.current!.getBoundingClientRect()
+      if (isIOS || !mouseInteractive || !containerEl) return
+      const rect = containerEl.getBoundingClientRect()
       mousePos.current.x = e.clientX - rect.left
       mousePos.current.y = e.clientY - rect.top
       const mouseUniform = program.uniforms.uMouse.value as Float32Array
       mouseUniform[0] = mousePos.current.x
       mouseUniform[1] = mousePos.current.y
     }
-    if (!isIOS && mouseInteractive) {
-      containerRef.current.addEventListener("mousemove", handleMouseMove)
+    if (!isIOS && mouseInteractive && containerEl) {
+      containerEl.addEventListener("mousemove", handleMouseMove)
     }
 
     // --- Resize handling ---
-    const setSize = () => {
-      const rect = containerRef.current!.getBoundingClientRect()
+    const setSize = (el?: HTMLElement) => {
+      const target = el ?? containerEl
+      if (!target) return
+      const rect = target.getBoundingClientRect()
       const width = Math.max(1, Math.floor(rect.width))
       const height = Math.max(1, Math.floor(rect.height))
       renderer.setSize(width, height)
@@ -193,9 +181,12 @@ export const Plasma: React.FC<PlasmaProps> = ({
       res[0] = gl.drawingBufferWidth
       res[1] = gl.drawingBufferHeight
     }
-    const ro = new ResizeObserver(setSize)
-    ro.observe(containerRef.current)
-    setSize()
+    const ro = new ResizeObserver((entries) => {
+      const target = (entries[0]?.target as HTMLElement) || containerEl
+      setSize(target)
+    })
+    if (containerEl) ro.observe(containerEl)
+    setSize(containerEl as HTMLElement)
 
     // --- Animation loop ---
     let raf = 0
@@ -203,7 +194,8 @@ export const Plasma: React.FC<PlasmaProps> = ({
     const t0 = performance.now()
     const loop = (t: number) => {
       const delta = t - lastTime
-      if (!isIOS || delta > 33) { // 60fps desktop, ~30fps iOS
+      if (!isIOS || delta > 33) {
+        // 60fps desktop, ~30fps iOS
         const timeValue = (t - t0) * 0.001
         if (direction === "pingpong") {
           const cycle = Math.sin(timeValue * 0.5) * directionMultiplier
@@ -220,21 +212,18 @@ export const Plasma: React.FC<PlasmaProps> = ({
     return () => {
       cancelAnimationFrame(raf)
       ro.disconnect()
-      if (!isIOS && mouseInteractive && containerRef.current) {
-        containerRef.current.removeEventListener("mousemove", handleMouseMove)
+      if (!isIOS && mouseInteractive && containerEl) {
+        containerEl.removeEventListener("mousemove", handleMouseMove)
       }
       try {
-        containerRef.current?.removeChild(canvas)
+        if (containerEl?.contains(canvas)) {
+          containerEl.removeChild(canvas)
+        }
       } catch {}
     }
   }, [color, speed, direction, scale, opacity, mouseInteractive])
 
-  return (
-    <div
-      ref={containerRef}
-      className={`plasma-container pointer-events-none will-change-transform absolute inset-0 ${className || ''}`}
-    />
-  )
+  return <div ref={containerRef} className="plasma-container pointer-events-none will-change-transform" />
 }
 
 export default Plasma

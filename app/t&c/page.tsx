@@ -1,10 +1,11 @@
-import { Footer } from "@/components/footer"
 import { SiteHeader } from "@/components/site-header"
+import { AppverseFooter } from "@/components/appverse-footer"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Terms and Conditions — Sri Tele Links",
-  description: "Terms and conditions for Sri Tele Links mobile store",
+  description: "Terms and conditions for purchases at Sri Tele Links.",
   robots: {
     index: true,
     follow: true,
@@ -22,76 +23,67 @@ export default function TermsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="relative overflow-hidden rounded-3xl border border-neutral-800 bg-[#0f0f0f] p-6 sm:p-10 shadow-xl">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(163,230,53,0.10),transparent_55%)]" />
-              <div className="relative space-y-8">
+              <div className="relative space-y-12">
                 <header className="space-y-4">
-                  <h1 className="text-4xl font-bold tracking-tight text-lime-300">Terms & Conditions</h1>
+                  <h1 className="text-4xl font-bold tracking-tight text-lime-300">Terms and Conditions</h1>
                   <p className="text-neutral-400 text-lg">
-                    Please read these terms carefully before making a purchase.
+                    By purchasing from Sri Tele Links, you agree to the terms below. Please read them carefully.
                   </p>
                 </header>
 
-                <section className="space-y-6">
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-white">1. Product Warranty</h2>
-                    <p className="text-neutral-300">
-                      All products sold by Sri Tele Links come with manufacturer warranty. The warranty period varies by product
-                      and manufacturer. Warranty claims must be supported by the original purchase invoice.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-white">2. Payment & Pricing</h2>
-                    <p className="text-neutral-300">
-                      All prices are in Indian Rupees (INR). We reserve the right to change prices without prior notice.
-                      Payment must be completed before product delivery. EMI terms are subject to bank/credit card policies.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-white">3. Exchange Policy</h2>
-                    <p className="text-neutral-300">
-                      Old phone exchange values are determined based on current market rates and device condition.
-                      The final exchange value will be determined after physical inspection of the device.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-white">4. Product Availability</h2>
-                    <p className="text-neutral-300">
-                      Product availability is subject to stock. We make every effort to maintain stock of popular models
-                      but cannot guarantee immediate availability of all products at all times.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-white">5. Delivery</h2>
-                    <p className="text-neutral-300">
-                      Free delivery is available within Chickballapur city limits. Delivery outside city limits may incur
-                      additional charges. Delivery timelines will be communicated at the time of purchase.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-white">6. Privacy Policy</h2>
-                    <p className="text-neutral-300">
-                      Customer information is kept confidential and used only for order processing, warranty registration,
-                      and service-related communication. We do not share customer information with third parties.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <h2 className="text-2xl font-semibold text-white">7. Dispute Resolution</h2>
-                    <p className="text-neutral-300">
-                      Any disputes will be resolved through mutual discussion. All legal matters are subject to
-                      Chickballapur jurisdiction only.
-                    </p>
-                  </div>
+                <section className="space-y-3">
+                  <h2 className="text-2xl font-semibold text-white">1. Product Authenticity</h2>
+                  <p className="text-neutral-300">
+                    All products are genuine and sourced from authorized channels. Each purchase is accompanied by a
+                    valid bill/invoice.
+                  </p>
                 </section>
 
-                <section className="pt-6 border-t border-white/10">
-                  <p className="text-sm text-neutral-400">
-                    These terms and conditions may be updated periodically. By making a purchase, you agree to the
-                    current version of these terms.
+                <section className="space-y-3">
+                  <h2 className="text-2xl font-semibold text-white">2. Warranty</h2>
+                  <p className="text-neutral-300">
+                    Warranty coverage is provided by the manufacturer and subject to their terms. We assist with
+                    guidance for service center processes where needed.
+                  </p>
+                </section>
+
+                <section className="space-y-3">
+                  <h2 className="text-2xl font-semibold text-white">3. Pricing & Offers</h2>
+                  <p className="text-neutral-300">
+                    Prices and promotional offers may change without prior notice. EMI and bank offers are subject to
+                    bank approval and current partner programs.
+                  </p>
+                </section>
+
+                <section className="space-y-3">
+                  <h2 className="text-2xl font-semibold text-white">4. Returns & Exchanges</h2>
+                  <p className="text-neutral-300">
+                    Returns or exchanges are limited and at management’s discretion, except where DOA policies apply per
+                    manufacturer guidelines. Opened or activated devices are not eligible for returns except as per
+                    brand DOA rules.
+                  </p>
+                </section>
+
+                <section className="space-y-3">
+                  <h2 className="text-2xl font-semibold text-white">5. Liability</h2>
+                  <p className="text-neutral-300">
+                    Sri Tele Links is not liable for indirect or consequential losses. Some terms may be subject to
+                    change based on manufacturer or regulatory updates.
+                  </p>
+                </section>
+
+                <section className="space-y-3">
+                  <h2 className="text-2xl font-semibold text-white">6. Contact</h2>
+                  <p className="text-neutral-300">
+                    For queries about these terms, contact{" "}
+                    <a href="mailto:lalithasripad@gmail.com" className="text-lime-300 underline">
+                      lalithasripad@gmail.com
+                    </a>{" "}
+                    or visit our{" "}
+                    <Link href="/contact" className="text-lime-300 underline">
+                      contact page
+                    </Link>
+                    .
                   </p>
                 </section>
               </div>
@@ -99,7 +91,7 @@ export default function TermsPage() {
           </div>
         </div>
       </section>
-      <Footer />
+      <AppverseFooter />
     </>
   )
 }

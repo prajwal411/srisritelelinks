@@ -1,22 +1,17 @@
+import type React from "react"
+import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
-import { Analytics } from "@/components/analytics"
-import PlasmaWrapper from "@/components/plasma-wrapper"
-import "./globals.css"
+import Plasma from "@/components/plasma"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Sri Tele Links | Your Trusted Mobile Partner in Chickballapur",
-  description: "Discover the latest smartphones from Realme, Oppo, Vivo, Apple, and Samsung in Chickballapur. Genuine products, best prices, and reliable after-sales service.",
-  keywords: "Mobile shop in Chickballapur, Buy Realme phones in Chickballapur, Oppo smartphones BB Road, iPhone store Chickballapur, Samsung Galaxy S25 Ultra Chickballapur, Vivo X100 Ultra near me, Best phone shop Chickballapur",
-  generator: "Next.js",
-  openGraph: {
-    title: "Sri Tele Links - Premium Mobile Store in Chickballapur",
-    description: "Your one-stop shop for all leading mobile phone brands. Latest smartphones, genuine accessories, and expert guidance.",
-    type: "website",
-  },
+  title: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
+  description:
+    "From product launches to full-scale campaigns, Skitbit delivers 3D animation that's fast, consistent, and built to wow your audience.",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -25,44 +20,63 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.className} dark`}>
       <head>
+        {/* Font Preload */}
         <link
           rel="preload"
           href="/fonts/Inter.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+          fetchPriority="high"
         />
-        <link rel="icon" href="/icons/favicon-dark.svg" />
-        <Script id="dynamic-favicon">
+
+        {/* Dynamic Favicon Script */}
+        <Script id="dynamic-favicon" strategy="beforeInteractive">
           {`
-            (function() {
-              function updateFavicon() {
-                const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const faviconHref = darkMode ? '/icons/skitbit-white.svg' : '/icons/favicon-dark.svg';
-                let link = document.querySelector("link[rel~='icon']");
-                if (!link) {
-                  link = document.createElement('link');
-                  link.rel = 'icon';
-                  document.getElementsByTagName('head')[0].appendChild(link);
-                }
-                link.href = faviconHref;
+            function updateFavicon() {
+              const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const faviconHref = darkMode ? '/icons/skitbit-white.svg' : '/icons/favicon-dark.svg';
+              let link = document.querySelector("link[rel~='icon']");
+              if (!link) {
+                link = document.createElement('link');
+                link.rel = 'icon';
+                document.getElementsByTagName('head')[0].appendChild(link);
               }
-              
-              // Initial setup
-              updateFavicon();
-              
-              // Listen for changes in color scheme
-              window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
-            })();
+              link.href = faviconHref;
+            }
+            updateFavicon();
+            // Listen for changes in theme
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+          `}
+        </Script>
+
+        {/* Google Tag Manager (deferred) */}
+        <Script id="gtm-script" strategy="lazyOnload">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-NFLHXXGK');`}
+        </Script>
+
+        {/* Google Analytics (deferred) */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-W6LV22900R" strategy="lazyOnload" />
+        <Script id="gtag-init" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W6LV22900R');
           `}
         </Script>
       </head>
-      <body className="bg-black">
-        <Analytics />
-        <PlasmaWrapper />
-        <div className="relative z-10">{children}</div>
+      <body>
+        <div className="fixed inset-0 z-0 bg-black">
+          <Plasma color="#8b5cf6" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />
+        </div>
+        <div className="relative z-10 bg-transparent">{children}</div>
       </body>
     </html>
   )

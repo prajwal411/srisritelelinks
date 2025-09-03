@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { AppverseFooter } from "@/components/appverse-footer"
+import { Button } from "@/components/ui/button"
 
 export default function FAQPage() {
   return (
@@ -13,130 +14,65 @@ export default function FAQPage() {
                 <header className="space-y-4">
                   <h1 className="text-4xl font-bold tracking-tight text-lime-300">Frequently Asked Questions</h1>
                   <p className="text-neutral-400 text-lg">
-                    Find answers to common questions about our products, services, and policies.
+                    Answers to common questions about phones, warranties, exchanges, and orders at Sri Tele Links.
                   </p>
                 </header>
 
                 <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    1. Are your products genuine and do they come with warranty?
-                  </h2>
+                  <h2 className="text-2xl font-semibold text-white">1. Do you sell original, brand‑new phones?</h2>
                   <p className="text-neutral-300">
-                    Yes, all our smartphones and accessories are 100% genuine, sourced directly from authorized distributors.
-                    Every product comes with official manufacturer warranty and valid bill.
+                    Yes. We only sell genuine, sealed products with standard manufacturer warranty from brands like
+                    Apple, Samsung, Realme, Oppo, and Vivo.
                   </p>
                 </section>
 
                 <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    2. What payment methods do you accept?
-                  </h2>
+                  <h2 className="text-2xl font-semibold text-white">2. Do you provide a bill and warranty?</h2>
                   <p className="text-neutral-300">
-                    We accept all major payment methods including cash, UPI (GPay, PhonePe, Paytm), debit cards, and credit cards.
-                    EMI options are also available on select cards.
+                    Every purchase includes a proper GST bill. Warranty terms follow the respective brand’s policy
+                    (typically 1 year on the handset and 6 months on select accessories).
                   </p>
                 </section>
 
                 <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    3. Do you provide after-sales service?
-                  </h2>
+                  <h2 className="text-2xl font-semibold text-white">3. Can I get EMI or card offers?</h2>
                   <p className="text-neutral-300">
-                    Yes, we provide complete support for warranty claims and after-sales service. Our team will guide you
-                    through the process and help coordinate with authorized service centers.
+                    We support popular EMI options and seasonal card offers from partner banks. Visit the store or call
+                    us for current offers and eligibility.
                   </p>
                 </section>
 
                 <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    4. What brands do you deal in?
-                  </h2>
+                  <h2 className="text-2xl font-semibold text-white">4. Do you have accessories and basic repairs?</h2>
                   <p className="text-neutral-300">
-                    We deal in all major smartphone brands including Apple (iPhone), Samsung, Realme, Oppo, and Vivo.
-                    We stock the latest models from each brand.
+                    Yes. We stock covers, screen guards, chargers, and more. We can help with basic repair needs and
+                    will guide you to authorized service when required.
                   </p>
                 </section>
 
                 <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    3. Do you work with existing CAD files or need product samples?
-                  </h2>
+                  <h2 className="text-2xl font-semibold text-white">5. Can I reserve a model if it’s out of stock?</h2>
                   <p className="text-neutral-300">
-                    We can work with both. If you have CAD or 3D models, we can import and refine them. If not, we can
-                    create models from physical product samples or detailed reference images.
+                    Absolutely. We can notify you when the model is available, or help you with alternatives that fit
+                    your needs and budget.
                   </p>
                 </section>
 
                 <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">4. How do you price your services?</h2>
+                  <h2 className="text-2xl font-semibold text-white">6. How can I reach you quickly?</h2>
                   <p className="text-neutral-300">
-                    Pricing is based on animation length, complexity, number of renders, and modeling requirements. You
-                    can view our detailed pricing on our{" "}
-                    <a href="/pricing" className="text-lime-300 underline">
-                      pricing page
-                    </a>
-                    .
+                    Use the buttons below to call or WhatsApp us for instant assistance.
                   </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">5. Can we request changes after delivery?</h2>
-                  <p className="text-neutral-300">
-                    Yes. All revisions are covered under our{" "}
-                    <a href="/revisions" className="text-lime-300 underline">
-                      revision policy
-                    </a>
-                    , which ensures smooth updates without unexpected scope creep.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    6. Will the renders match our brand’s visual style?
-                  </h2>
-                  <p className="text-neutral-300">
-                    Absolutely. We customize lighting, materials, camera angles, and animation pacing to fit your
-                    brand’s identity and marketing needs.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">7. What formats do you deliver in?</h2>
-                  <p className="text-neutral-300">
-                    We typically deliver in MP4 (H.264) for videos and high-resolution PNG/JPG for stills. Other formats
-                    like MOV, ProRes, or transparent-background renders are available on request.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    8. Can you handle large-scale projects or bulk renders?
-                  </h2>
-                  <p className="text-neutral-300">
-                    Yes, we regularly work on bulk orders for 10+ animations or 50+ renders. We optimize workflows to
-                    maintain quality and meet tight deadlines.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    9. Do you offer creative direction or only technical execution?
-                  </h2>
-                  <p className="text-neutral-300">
-                    We do both. Our team can develop creative concepts, storyboards, and camera moves, or simply execute
-                    your pre-approved vision.
-                  </p>
-                </section>
-
-                <section className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">10. How do we get started?</h2>
-                  <p className="text-neutral-300">
-                    Simply{" "}
-                    <a href="/contact" className="text-lime-300 underline">
-                      contact us
-                    </a>{" "}
-                    with your project details, references, and timeline. We’ll provide a proposal and next steps.
-                  </p>
+                  <div className="flex gap-2">
+                    <Button asChild className="rounded-full">
+                      <a href="https://wa.me/9035101337" target="_blank" rel="noopener noreferrer">
+                        WhatsApp Us
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline" className="rounded-full bg-transparent">
+                      <a href="tel:9035101337">Call Now</a>
+                    </Button>
+                  </div>
                 </section>
               </div>
             </div>

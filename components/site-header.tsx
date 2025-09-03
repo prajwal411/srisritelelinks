@@ -4,15 +4,15 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import Image from "next/image"
-import { Menu, Briefcase, Tag, HelpCircle, FileText, Info } from "lucide-react"
+import { Menu, Home, Store, Building2, MessageSquare, BadgeCheck } from "lucide-react"
 
 export function SiteHeader() {
   const links = [
-    { href: "/", label: "Home", icon: Briefcase },
-    { href: "#pricing", label: "Pricing", icon: Tag },
-    { href: "faq", label: "FAQ", icon: HelpCircle },
-    { href: "#blog", label: "Blog", icon: FileText },
-    { href: "About", label: "About", icon: Info },
+    { href: "/", label: "Home", icon: Home },
+    { href: "/About", label: "About Us", icon: Building2 },
+    { href: "/products", label: "Products", icon: Store },
+    { href: "/brands", label: "Brands We Offer", icon: BadgeCheck },
+    { href: "/contact", label: "Contact Us", icon: MessageSquare },
   ]
 
   return (
@@ -34,21 +34,21 @@ export function SiteHeader() {
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-purple-300 transition-colors">
+              <Link key={l.href} href={l.href} className="hover:text-blue-300 transition-colors">
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex">
-            <Button
-              asChild
-              className="bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5
-                         hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
-                         transition-all"
-            >
-              <Link href="https://wa.me/9035101337">WhatsApp Us</Link>
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-2">
+            <Button asChild className="rounded-lg">
+              <a href="tel:9035101337">Call Now</a>
+            </Button>
+            <Button asChild variant="outline" className="rounded-lg bg-transparent">
+              <a href="https://wa.me/9035101337" target="_blank" rel="noopener noreferrer">
+                WhatsApp Us
+              </a>
             </Button>
           </div>
 
@@ -84,7 +84,7 @@ export function SiteHeader() {
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-purple-300 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-blue-300 transition-colors"
                     >
                       <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
                         <l.icon className="h-4 w-4" />
@@ -94,15 +94,15 @@ export function SiteHeader() {
                   ))}
                 </nav>
 
-                {/* CTA Button at Bottom */}
-                <div className="mt-auto border-t border-gray-800 p-4">
-                  <Button
-                    asChild
-                    className="w-full bg-lime-400 text-black font-medium rounded-lg px-6 py-2.5
-                               hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
-                               transition-all"
-                  >
-                    <Link href="https://wa.me/9035101337">WhatsApp Us</Link>
+                {/* CTA Buttons at Bottom */}
+                <div className="mt-auto border-t border-gray-800 p-4 space-y-2">
+                  <Button asChild className="w-full rounded-lg">
+                    <a href="tel:9035101337">Call Now</a>
+                  </Button>
+                  <Button asChild variant="outline" className="w-full rounded-lg bg-transparent">
+                    <a href="https://wa.me/9035101337" target="_blank" rel="noopener noreferrer">
+                      WhatsApp Us
+                    </a>
                   </Button>
                 </div>
               </SheetContent>
