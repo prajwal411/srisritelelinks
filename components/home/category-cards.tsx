@@ -1,10 +1,11 @@
+import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const categories = [
-  { name: "Smartphones", href: "/category/smartphones", img: "/smartphones.jpg" },
-  { name: "Accessories", href: "/category/accessories", img: "/accessories.png" },
-  { name: "EMI / Exchange Offers", href: "/offers/emi-exchange", img: "/emi-exchange-offers.jpg" },
-  { name: "Premium Phones", href: "/category/premium", img: "/premium-phones.jpg" },
+  { name: "Smartphones", href: "/products", img: "/smartphones-category.png" },
+  { name: "Accessories", href: "/products", img: "/mobile-accessories-category.jpg" },
+  { name: "EMI / Exchange Offers", href: "/products", img: "/emi-exchange-promotional.jpg" },
+  { name: "Premium Phones", href: "/products", img: "/premium-phones-category.jpg" },
 ]
 
 export function CategoryCards() {
@@ -16,21 +17,21 @@ export function CategoryCards() {
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
           {categories.map((c) => (
-            <a key={c.name} href={c.href} className="group">
+            <Link key={c.name} href={c.href} className="group">
               <Card className="transition-shadow group-hover:shadow-md border-white/15 bg-transparent">
                 <CardHeader className="pb-2">
                   <CardTitle className="text-base text-white">{c.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <img
-                    src={c.img || "/placeholder.svg"}
+                    src={c.img || "/placeholder.svg?height=300&width=400&query=mobile category"}
                     alt={`${c.name} preview`}
                     className="h-40 w-full rounded-md object-cover"
                     crossOrigin="anonymous"
                   />
                 </CardContent>
               </Card>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

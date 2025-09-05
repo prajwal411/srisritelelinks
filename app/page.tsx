@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { Footer } from "@/components/footer"
 import Script from "next/script"
+import { LogoMarquee } from "@/components/home/logo-marquee" // Import LogoMarquee
 
 import { HeroSlider } from "@/components/home/hero-slider"
 import { CategoryCards } from "@/components/home/category-cards"
@@ -8,10 +9,7 @@ import { DealsOfDay } from "@/components/home/deals-of-day"
 import { FeaturedCarousel } from "@/components/home/featured-carousel"
 import { BrandZone } from "@/components/home/brand-zone"
 import { TrustBadges } from "@/components/home/trust-badges"
-import { AccessoriesGrid } from "@/components/home/accessories-grid"
 import { Hero } from "@/components/hero"
-import { Features } from "@/components/features"
-import { LogoMarquee } from "@/components/logo-marquee"
 import { FeaturedPhones } from "@/components/featured-phones"
 import CTABanner from "@/components/cta-banner"
 import Testimonials from "@/components/testimonials"
@@ -48,6 +46,7 @@ export default function Page() {
       <main className="min-h-[100dvh] text-white">
         <SiteHeader />
         <Hero />
+        <CategoryCards />
         <div className="mt-8 md:mt-12 lg:mt-16">
           <TrustBadges />
         </div>
@@ -55,16 +54,12 @@ export default function Page() {
           <RealmeService />
         </div>
         <HeroSlider />
-        <CategoryCards />
-        <LogoMarquee />
-        <AccessoriesGrid />
+        <LogoMarquee /> {/* LogoMarquee component added */}
         <DealsOfDay endsAt={undefined} />
         <FeaturedCarousel />
         <BrandZone />
         <div id="phones" className="sr-only" aria-hidden="true" />
-        <Features />
         <FeaturedPhones />
-
         <section className="container mx-auto px-4 space-y-12 sm:space-y-16 py-12 sm:py-16">
           <CTABanner />
           <Testimonials />
@@ -72,7 +67,6 @@ export default function Page() {
           <LeadCapture />
           <StoreInfo />
         </section>
-
         <Footer />
       </main>
 

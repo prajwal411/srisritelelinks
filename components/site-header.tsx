@@ -32,9 +32,9 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
+          <nav className="hidden items-center gap-6 text-sm text-white md:flex">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-blue-300 transition-colors">
+              <Link key={l.href} href={l.href} className="hover:text-lime-300 transition-colors">
                 {l.label}
               </Link>
             ))}
@@ -45,7 +45,11 @@ export function SiteHeader() {
             <Button asChild className="rounded-lg">
               <a href="tel:9035101337">Call Now</a>
             </Button>
-            <Button asChild variant="outline" className="rounded-lg bg-transparent">
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-lg bg-transparent text-white border-white/20 hover:bg-white/10"
+            >
               <a href="https://wa.me/9035101337" target="_blank" rel="noopener noreferrer">
                 WhatsApp Us
               </a>
@@ -59,7 +63,7 @@ export function SiteHeader() {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="border-gray-700 bg-gray-900/80 text-gray-200 hover:bg-gray-800"
+                  className="border-white/20 bg-white/10 text-white hover:bg-white/20"
                 >
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
@@ -79,14 +83,14 @@ export function SiteHeader() {
                 </div>
 
                 {/* Nav Links */}
-                <nav className="flex flex-col gap-1 mt-2 text-gray-200">
+                <nav className="flex flex-col gap-1 mt-2 text-white">
                   {links.map((l) => (
                     <Link
                       key={l.href}
                       href={l.href}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-blue-300 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-900 hover:text-lime-300 transition-colors"
                     >
-                      <span className="inline-flex items-center justify-center w-5 h-5 text-gray-400">
+                      <span className="inline-flex items-center justify-center w-5 h-5 text-white">
                         <l.icon className="h-4 w-4" />
                       </span>
                       <span className="text-sm">{l.label}</span>
@@ -99,7 +103,11 @@ export function SiteHeader() {
                   <Button asChild className="w-full rounded-lg">
                     <a href="tel:9035101337">Call Now</a>
                   </Button>
-                  <Button asChild variant="outline" className="w-full rounded-lg bg-transparent">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full rounded-lg bg-transparent text-white border-white/20 hover:bg-white/10"
+                  >
                     <a href="https://wa.me/9035101337" target="_blank" rel="noopener noreferrer">
                       WhatsApp Us
                     </a>

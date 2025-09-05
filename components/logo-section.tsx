@@ -37,48 +37,6 @@ export function LogoSection() {
               <div className="col-span-2 flex items-center justify-center rounded-2xl liquid-glass px-8 py-6">
                 <span className="text-xl font-light tracking-[0.3em] text-neutral-300">TESLA</span>
               </div>
-
-              {/* Row 2 */}
-              <div className="flex items-center justify-center rounded-2xl liquid-glass p-6">
-                <div className="text-2xl text-neutral-300">🍎</div>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl liquid-glass px-6 py-6">
-                <div className="rounded-full border-2 border-neutral-400 px-4 py-1">
-                  <span className="text-sm font-serif italic text-neutral-300">Ford</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl liquid-glass p-6">
-                <span className="text-lg font-bold tracking-wider text-neutral-300">GAP</span>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl liquid-glass px-6 py-6">
-                <span className="text-lg font-light tracking-wide text-neutral-300">LACOSTE</span>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl liquid-glass px-6 py-6">
-                <span className="text-xl font-bold text-neutral-300">ca</span>
-              </div>
-
-              {/* Row 3 */}
-              <div className="flex items-center justify-center rounded-2xl liquid-glass p-6">
-                <div className="grid grid-cols-2 gap-1">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="h-2 w-2 rounded-sm bg-neutral-400"></div>
-                  ))}
-                </div>
-              </div>
-              <div className="col-span-2 flex items-center justify-center rounded-2xl liquid-glass px-8 py-6">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full border-2 border-neutral-400 flex items-center justify-center">
-                    <div className="text-xs text-neutral-300">★</div>
-                  </div>
-                  <span className="text-lg font-light text-neutral-300">Mercedes-Benz</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl liquid-glass p-6">
-                <div className="text-2xl text-neutral-300">🍎</div>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl liquid-glass p-6">
-                <div className="text-2xl text-neutral-300">🎮</div>
-              </div>
             </div>
 
             {/* Mobile Stack */}
@@ -93,13 +51,6 @@ export function LogoSection() {
               </div>
               <div className="flex items-center justify-center rounded-2xl liquid-glass px-8 py-8">
                 <span className="text-2xl font-light tracking-[0.3em] text-neutral-300">TESLA</span>
-              </div>
-              <div className="flex items-center justify-center rounded-2xl liquid-glass p-8">
-                <div className="grid grid-cols-2 gap-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="h-3 w-3 rounded-sm bg-neutral-400"></div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>

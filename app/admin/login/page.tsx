@@ -59,7 +59,7 @@ export default function AdminLogin() {
         </div>
         <div className="mt-auto">
           <Image
-            src="/images/admin-cover.png"
+            src="/placeholder.svg?height=300&width=500&text=Admin+Dashboard"
             alt="Admin Dashboard"
             width={500}
             height={300}

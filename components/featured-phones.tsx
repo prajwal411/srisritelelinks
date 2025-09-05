@@ -25,7 +25,7 @@ const PHONES: Phone[] = [
     image: "/samsung-galaxy-s25-ultra.jpg",
   },
   { brand: "Realme", name: "GT7 Pro 5G", specs: "Flagship SoC, 120Hz AMOLED", image: "/realme-gt7-pro.jpg" },
-  { brand: "Oppo", name: "Find X8 Pro", specs: "Hasselblad tuned cameras", image: "/oppo-find-x8-pro.png" },
+  { brand: "Oppo", name: "Find X8 Pro", specs: "Hasselblad tuned cameras", image: "/oppo-find-x8-pro.jpg" },
   { brand: "Vivo", name: "X100 Ultra", specs: "ZEISS optics, periscope", image: "/vivo-x100-ultra.png" },
 ]
 
@@ -42,7 +42,7 @@ export function FeaturedPhones() {
       </h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {PHONES.map((p) => (
-          <Card key={p.name} className="liquid-glass border border-white/10 bg-white/5 backdrop-blur-xl">
+          <Card key={p.name} className="liquid-glass border border-white/10 bg-black/40 backdrop-blur-xl">
             <CardHeader>
               <CardTitle className="text-white text-lg">
                 {p.brand} — {p.name}
@@ -58,14 +58,18 @@ export function FeaturedPhones() {
                   sizes="(min-width: 1024px) 360px, 90vw"
                 />
               </div>
-              <p className="text-sm text-neutral-300">{p.specs}</p>
+              <p className="text-sm text-white">{p.specs}</p>
               <div className="flex gap-2">
                 <Button asChild className="rounded-full">
                   <a href={waLink(p.name)} target="_blank" rel="noopener noreferrer">
                     Enquire on WhatsApp
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-transparent">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-full bg-transparent text-white border-white/20 hover:bg-white/10"
+                >
                   <a href="/products">View All</a>
                 </Button>
               </div>

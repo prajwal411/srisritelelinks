@@ -95,7 +95,7 @@ const phones = [
     title: "Oppo Find X8 Pro",
     sub: "Hasselblad camera tuning",
     badge: "Oppo",
-    image: "/oppo-find-x8-pro-product-photo.jpg",
+    image: "/oppo-find-x8-pro-dark.jpg",
   },
   {
     title: "Vivo X100 Ultra",

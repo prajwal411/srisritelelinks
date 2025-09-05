@@ -7,27 +7,26 @@ import Image from "next/image"
 export function LogoMarquee() {
   const [pausedRow, setPausedRow] = useState<string | null>(null)
 
-  // Logo data with colors and content
   const logos = [
-    { name: "Intel", content: "intel", color: "text-neutral-300" },
-    { name: "MongoDB", content: "🟢", color: "text-green-500" },
-    { name: "Skitbit", content: "image", color: "text-neutral-300", image: "/images/skitbit-subtle-logo.png" },
-    { name: "VK", content: "VK", color: "text-white", bg: "bg-blue-500" },
-    { name: "TechCrunch", content: "TC", color: "text-neutral-300" },
-    { name: "MailChimp", content: "🐵", color: "text-yellow-500" },
-    { name: "ESJ", content: "image", color: "text-neutral-300", image: "/images/esj-subtle-logo.png" },
-    { name: "Kickstarter", content: "K", color: "text-white", bg: "bg-green-500" },
+    { name: "Microsoft", content: "image", color: "text-neutral-300", image: "/microsoft-logo.jpg" },
+    { name: "Google", content: "image", color: "text-neutral-300", image: "/google-logo.jpg" },
+    { name: "Apple", content: "image", color: "text-neutral-300", image: "/apple-logo.png" },
+    { name: "Amazon", content: "image", color: "text-neutral-300", image: "/amazon-logo.jpg" },
+    { name: "Meta", content: "image", color: "text-neutral-300", image: "/meta-logo.jpg" },
+    { name: "Tesla", content: "image", color: "text-neutral-300", image: "/tesla-logo.jpg" },
+    { name: "Netflix", content: "image", color: "text-neutral-300", image: "/netflix-logo.jpg" },
+    { name: "Adobe", content: "image", color: "text-neutral-300", image: "/adobe-logo.jpg" },
   ]
 
   const secondRowLogos = [
-    { name: "StumbleUpon", content: "🔴", color: "text-red-500" },
-    { name: "Microsoft", content: "⊞", color: "text-neutral-400" },
-    { name: "CleanMyMac", content: "🌈", color: "text-purple-400" },
-    { name: "Google", content: "G", color: "text-neutral-300" },
-    { name: "Behance", content: "Be", color: "text-white", bg: "bg-blue-500" },
-    { name: "Apple", content: "🍎", color: "text-neutral-300" },
-    { name: "TransferWise", content: "✓", color: "text-white", bg: "bg-green-500" },
-    { name: "Medium", content: "M", color: "text-neutral-300" },
+    { name: "Samsung", content: "image", color: "text-neutral-300", image: "/samsung-logo.png" },
+    { name: "Intel", content: "image", color: "text-neutral-300", image: "/intel-logo.jpg" },
+    { name: "IBM", content: "image", color: "text-neutral-300", image: "/ibm-logo.jpg" },
+    { name: "Oracle", content: "image", color: "text-neutral-300", image: "/oracle-logo.jpg" },
+    { name: "Salesforce", content: "image", color: "text-neutral-300", image: "/salesforce-logo.jpg" },
+    { name: "Spotify", content: "image", color: "text-neutral-300", image: "/spotify-logo.jpg" },
+    { name: "Uber", content: "image", color: "text-neutral-300", image: "/uber-logo.jpg" },
+    { name: "Airbnb", content: "image", color: "text-neutral-300", image: "/airbnb-logo.jpg" },
   ]
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
@@ -66,7 +65,7 @@ export function LogoMarquee() {
           <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl text-center sm:text-left">
             Meet our <span className="text-lime-300">top-tier</span>
             <br />
-            customers
+            company
           </h2>
           <Button variant="outline" className="mt-4 sm:mt-0 liquid-glass hover:liquid-glass-enhanced bg-transparent">
             Learn More
@@ -82,9 +81,9 @@ export function LogoMarquee() {
               style={{
                 animationPlayState: pausedRow === "first" ? "paused" : "running",
                 width: "max-content",
+                transform: "translate3d(0, 0, 0)", // Added transform3d for hardware acceleration
               }}
             >
-              {/* Triple the logos for seamless loop */}
               {[...logos, ...logos, ...logos].map((logo, index) => (
                 <LogoCard key={`first-${index}`} logo={logo} rowId="first" />
               ))}
@@ -98,9 +97,9 @@ export function LogoMarquee() {
               style={{
                 animationPlayState: pausedRow === "second" ? "paused" : "running",
                 width: "max-content",
+                transform: "translate3d(0, 0, 0)", // Added transform3d for hardware acceleration
               }}
             >
-              {/* Triple the logos for seamless loop */}
               {[...secondRowLogos, ...secondRowLogos, ...secondRowLogos].map((logo, index) => (
                 <LogoCard key={`second-${index}`} logo={logo} rowId="second" />
               ))}

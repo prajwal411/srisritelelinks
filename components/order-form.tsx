@@ -407,7 +407,7 @@ export function OrderForm({ isOpen, onClose, selectedPackage }: OrderFormProps) 
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-16 bg-neutral-800 rounded-lg flex items-center justify-center">
                           <Image
-                            src={`/placeholder-120x120.png?height=120&width=120&text=${option.name}+3D`}
+                            src={`/ceholder-svg-key-uwo92-height-48-width-48-text-.jpg?key=uwo92&height=48&width=48&text=${option.name}+3D`}
                             alt={option.name}
                             width={48}
                             height={48}
@@ -498,7 +498,7 @@ export function OrderForm({ isOpen, onClose, selectedPackage }: OrderFormProps) 
                         }
                       >
                         <CardContent className="p-4">
-                          <div className="flex items-center justify-between">
+                          <div className="flex justify-between items-center">
                             <div>
                               <h5 className="font-semibold text-white">{option.name}</h5>
                               <p className="text-sm text-neutral-400">{option.quantity} high-quality renders</p>

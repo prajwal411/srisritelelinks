@@ -14,12 +14,12 @@ const deals: Deal[] = [
   {
     title: "Free Screen Guard with iPhone Purchase",
     description: "Limited-time offer. Add both to cart, discount auto-applies.",
-    href: "/offers/free-screen-guard",
+    href: "/products",
   },
   {
     title: "Exchange Old Phone, Get Instant Discount",
     description: "On-the-spot valuation and instant savings at checkout.",
-    href: "/offers/exchange-discount",
+    href: "/products",
   },
 ]
 

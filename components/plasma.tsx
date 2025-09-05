@@ -110,20 +110,27 @@ export const Plasma: React.FC<PlasmaProps> = ({
   useEffect(() => {
     if (!containerRef.current) return
 
-    // --- Device detection ---
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
     const isMobile = window.innerWidth < 768
+    const isLowEnd = navigator.hardwareConcurrency <= 4 || isMobile
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+    if (prefersReducedMotion) {
+      return // Don't render plasma if user prefers reduced motion
+    }
 
     const useCustomColor = color ? 1.0 : 0.0
     const customColorRgb = color ? hexToRgb(color) : [1, 1, 1]
     const directionMultiplier = direction === "reverse" ? -1.0 : 1.0
 
-    // Lower DPR on mobile/iOS
+    const baseDPR = Math.min(window.devicePixelRatio || 1, 2)
+    const performanceDPR = isLowEnd ? baseDPR * 0.3 : baseDPR * 0.6
+
     const renderer = new Renderer({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2) * (isIOS || isMobile ? 0.5 : 1),
+      dpr: performanceDPR,
     })
     const gl = renderer.gl
     const canvas = gl.canvas as HTMLCanvasElement
@@ -144,20 +151,24 @@ export const Plasma: React.FC<PlasmaProps> = ({
         iResolution: { value: new Float32Array([1, 1]) },
         uCustomColor: { value: new Float32Array(customColorRgb) },
         uUseCustomColor: { value: useCustomColor },
-        uSpeed: { value: speed * 0.4 },
+        uSpeed: { value: speed * (isLowEnd ? 0.2 : 0.4) },
         uDirection: { value: directionMultiplier },
         uScale: { value: scale },
-        uOpacity: { value: opacity },
+        uOpacity: { value: opacity * (isLowEnd ? 0.7 : 1) },
         uMouse: { value: new Float32Array([0, 0]) },
-        uMouseInteractive: { value: isIOS ? 0.0 : mouseInteractive ? 1.0 : 0.0 },
+        uMouseInteractive: { value: isLowEnd ? 0.0 : mouseInteractive ? 1.0 : 0.0 },
       },
     })
 
     const mesh = new Mesh(gl, { geometry, program })
 
-    // --- Mouse interaction (skip on iOS) ---
+    let mouseThrottle = 0
     const handleMouseMove = (e: MouseEvent) => {
-      if (isIOS || !mouseInteractive || !containerEl) return
+      if (isLowEnd || !mouseInteractive || !containerEl) return
+      const now = performance.now()
+      if (now - mouseThrottle < 16) return // Throttle to ~60fps
+      mouseThrottle = now
+
       const rect = containerEl.getBoundingClientRect()
       mousePos.current.x = e.clientX - rect.left
       mousePos.current.y = e.clientY - rect.top
@@ -165,11 +176,11 @@ export const Plasma: React.FC<PlasmaProps> = ({
       mouseUniform[0] = mousePos.current.x
       mouseUniform[1] = mousePos.current.y
     }
-    if (!isIOS && mouseInteractive && containerEl) {
-      containerEl.addEventListener("mousemove", handleMouseMove)
+    if (!isLowEnd && mouseInteractive && containerEl) {
+      containerEl.addEventListener("mousemove", handleMouseMove, { passive: true })
     }
 
-    // --- Resize handling ---
+    // Resize handling
     const setSize = (el?: HTMLElement) => {
       const target = el ?? containerEl
       if (!target) return
@@ -188,14 +199,15 @@ export const Plasma: React.FC<PlasmaProps> = ({
     if (containerEl) ro.observe(containerEl)
     setSize(containerEl as HTMLElement)
 
-    // --- Animation loop ---
     let raf = 0
     let lastTime = 0
     const t0 = performance.now()
+    const targetFPS = isLowEnd ? 20 : isMobile ? 30 : 60
+    const frameInterval = 1000 / targetFPS
+
     const loop = (t: number) => {
       const delta = t - lastTime
-      if (!isIOS || delta > 33) {
-        // 60fps desktop, ~30fps iOS
+      if (delta >= frameInterval) {
         const timeValue = (t - t0) * 0.001
         if (direction === "pingpong") {
           const cycle = Math.sin(timeValue * 0.5) * directionMultiplier
@@ -212,7 +224,7 @@ export const Plasma: React.FC<PlasmaProps> = ({
     return () => {
       cancelAnimationFrame(raf)
       ro.disconnect()
-      if (!isIOS && mouseInteractive && containerEl) {
+      if (!isLowEnd && mouseInteractive && containerEl) {
         containerEl.removeEventListener("mousemove", handleMouseMove)
       }
       try {
