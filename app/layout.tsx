@@ -11,9 +11,9 @@ import { FloatingButtons } from "@/components/floating-buttons"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "Skitbit | 3D Animation Made Simple, Reliable & Scalable",
+  title: "Sri Tele Links | Your Trusted Mobile Store in Chickballapur",
   description:
-    "From product launches to full-scale campaigns, Skitbit delivers 3D animation that's fast, consistent, and built to wow your audience.",
+    "Sri Tele Links offers the latest smartphones, accessories, and authorized Realme service in Chickballapur. EMI options and exchange offers available.",
   generator: "v0.app",
 }
 

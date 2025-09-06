@@ -11,7 +11,7 @@ export default function AboutPage() {
     "@type": "Store",
     name: "Sri Tele Links",
     url: "https://example.com",
-    logo: "/icons/skitbit-white.svg",
+    logo: "/icons/sri-tele-links-logo.svg",
     description:
       "Sri Tele Links is your trusted mobile store in Chickballapur, offering all major smartphone brands, genuine products, and friendly customer service.",
     sameAs: ["https://wa.me/9035101337"],
@@ -172,9 +172,21 @@ export default function AboutPage() {
       <section className="px-6 md:px-10 lg:px-20 py-10">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Gallery</h2>
         <div className="grid gap-6 md:grid-cols-3">
-          <img src="/shopfront-photo.jpg" alt="Sri Tele Links shopfront" className="rounded-xl border" />
-          <img src="/realme-service-counter.jpg" alt="Authorized Realme service counter" className="rounded-xl border" />
-          <img src="/team-picture.jpg" alt="Sri Tele Links team" className="rounded-xl border" />
+          <img 
+            src="/about/WhatsApp Image 2025-09-04 at 17.35.48_89a5a2e9.jpg" 
+            alt="Sri Tele Links Store View" 
+            className="rounded-xl border w-full h-64 object-cover" 
+          />
+          <img 
+            src="/about/WhatsApp Image 2025-09-04 at 20.29.36_4c56c42f.jpg" 
+            alt="Sri Tele Links Service Center" 
+            className="rounded-xl border w-full h-64 object-cover" 
+          />
+          <img 
+            src="/about/WhatsApp Image 2025-09-04 at 20.29.44_ca4a8cf2.jpg" 
+            alt="Sri Tele Links Store Interior" 
+            className="rounded-xl border w-full h-64 object-cover" 
+          />
         </div>
       </section>
 
