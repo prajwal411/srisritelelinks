@@ -8,25 +8,19 @@ export function LogoMarquee() {
   const [pausedRow, setPausedRow] = useState<string | null>(null)
 
   const logos = [
-    { name: "Microsoft", content: "image", color: "text-neutral-300", image: "/microsoft-logo.jpg" },
-    { name: "Google", content: "image", color: "text-neutral-300", image: "/google-logo.jpg" },
     { name: "Apple", content: "image", color: "text-neutral-300", image: "/apple-logo.png" },
-    { name: "Amazon", content: "image", color: "text-neutral-300", image: "/amazon-logo.jpg" },
-    { name: "Meta", content: "image", color: "text-neutral-300", image: "/meta-logo.jpg" },
-    { name: "Tesla", content: "image", color: "text-neutral-300", image: "/tesla-logo.jpg" },
-    { name: "Netflix", content: "image", color: "text-neutral-300", image: "/netflix-logo.jpg" },
-    { name: "Adobe", content: "image", color: "text-neutral-300", image: "/adobe-logo.jpg" },
+    { name: "Samsung", content: "image", color: "text-neutral-300", image: "/samsung-logo.png" },
+    { name: "Vivo", content: "image", color: "text-neutral-300", image: "/vivo-logo.jpg" },
+    { name: "Realme", content: "image", color: "text-neutral-300", image: "/realme-logo.png" },
+    { name: "Oppo", content: "image", color: "text-neutral-300", image: "/oppo-logo.jpg" },
   ]
 
   const secondRowLogos = [
+    { name: "Apple", content: "image", color: "text-neutral-300", image: "/apple-logo.png" },
     { name: "Samsung", content: "image", color: "text-neutral-300", image: "/samsung-logo.png" },
-    { name: "Intel", content: "image", color: "text-neutral-300", image: "/intel-logo.jpg" },
-    { name: "IBM", content: "image", color: "text-neutral-300", image: "/ibm-logo.jpg" },
-    { name: "Oracle", content: "image", color: "text-neutral-300", image: "/oracle-logo.jpg" },
-    { name: "Salesforce", content: "image", color: "text-neutral-300", image: "/salesforce-logo.jpg" },
-    { name: "Spotify", content: "image", color: "text-neutral-300", image: "/spotify-logo.jpg" },
-    { name: "Uber", content: "image", color: "text-neutral-300", image: "/uber-logo.jpg" },
-    { name: "Airbnb", content: "image", color: "text-neutral-300", image: "/airbnb-logo.jpg" },
+    { name: "Vivo", content: "image", color: "text-neutral-300", image: "/vivo-logo.jpg" },
+    { name: "Realme", content: "image", color: "text-neutral-300", image: "/realme-logo.png" },
+    { name: "Oppo", content: "image", color: "text-neutral-300", image: "/oppo-logo.jpg" },
   ]
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
