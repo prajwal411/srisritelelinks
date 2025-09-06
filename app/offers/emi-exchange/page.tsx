@@ -31,6 +31,15 @@ export default function EMIExchangePage() {
       <SiteHeader />
       <main className="container mx-auto px-4 py-12 text-white">
         <header className="text-center mb-8">
+          <div className="flex justify-center mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=240&q=80"
+              alt="AI generated EMI illustration"
+              width={120}
+              height={120}
+              className="rounded-lg shadow-lg object-cover"
+            />
+          </div>
           <h1 className="text-4xl font-extrabold tracking-tight">EMI & Exchange Offers</h1>
           <p className="text-neutral-400 mt-2">
             Make your smartphone purchase affordable with our flexible EMI options and exchange deals.

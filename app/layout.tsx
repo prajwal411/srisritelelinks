@@ -3,9 +3,9 @@ import "./globals.css"
 import type { Metadata } from "next"
 
 import { Inter } from "next/font/google"
-// import Script from "next/script"
 import Plasma from "@/components/plasma"
 import DynamicScripts from "@/components/dynamic-scripts"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.className} dark`}>
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Font Preload */}
         <link
@@ -33,17 +33,16 @@ export default function RootLayout({
           crossOrigin="anonymous"
           fetchPriority="high"
         />
-
-  {/* Dynamic scripts moved to Client Component */}
-  {/* eslint-disable-next-line @next/next/no-head-element */}
-  <DynamicScripts />
-import DynamicScripts from "@/components/DynamicScripts"
       </head>
-      <body>
-        <div className="fixed inset-0 z-0 bg-black">
-          <Plasma color="#8b5cf6" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />
-        </div>
-        <div className="relative z-10 bg-transparent">{children}</div>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          {/* Client components properly wrapped in ThemeProvider */}
+          <DynamicScripts />
+          <div className="fixed inset-0 z-0 bg-black">
+            <Plasma color="#8b5cf6" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />
+          </div>
+          <div className="relative z-10 bg-transparent">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   )

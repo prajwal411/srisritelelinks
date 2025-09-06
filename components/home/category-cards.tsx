@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 const categories = [
   { name: "Smartphones", href: "/products", img: "/smartphones-category.png" },
   { name: "Accessories", href: "/products", img: "/mobile-accessories-category.jpg" },
-  { name: "EMI / Exchange Offers", href: "/products", img: "/emi-exchange-promotional.jpg" },
   { name: "Premium Phones", href: "/products", img: "/premium-phones-category.jpg" },
 ]
 

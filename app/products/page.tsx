@@ -23,22 +23,22 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Apple",
       name: "iPhone 16",
-      image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
-      additionalImages: ["https://images.unsplash.com/photo-1591337676887-a217a6970a8a", "https://images.unsplash.com/photo-1678911820864-e5cfd0902a7e"],
+      image: "/products/iPhone 16.webp",
+      additionalImages: ["/products/iPhone 16 Plus.jpg", "/products/iPhone 16 Pro.webp"],
       features: ["A18 Bionic chip", "48MP Main camera", "6.1-inch Super Retina XDR", "Action Button", "USB-C"],
     },
     {
       brand: "Apple",
       name: "iPhone 16 Plus",
-      image: "https://images.unsplash.com/photo-1556656793-08538906a9f8",
-      additionalImages: ["https://images.unsplash.com/photo-1592750452646-33d9f0904a45", "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5"],
+      image: "/products/iPhone 16 Plus.jpg",
+      additionalImages: ["/products/iPhone 16.webp", "/products/iPhone 16 Pro Max.jpg"],
       features: ["A18 Bionic chip", "48MP Main camera", "6.7-inch Super Retina XDR", "Action Button", "USB-C"],
     },
     {
       brand: "Apple",
       name: "iPhone 16 Pro",
-      image: "https://images.unsplash.com/photo-1574719128055-f4f84a835363",
-      additionalImages: ["https://images.unsplash.com/photo-1580910051074-3eb694886505", "https://images.unsplash.com/photo-1603891128711-11b4b03bb138"],
+      image: "/products/iPhone 16 Pro.webp",
+      additionalImages: ["/products/iPhone 16 Pro Max.jpg", "/products/iPhone 16.webp"],
       features: [
         "A18 Pro chip",
         "48MP Pro camera system",
@@ -50,8 +50,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Apple",
       name: "iPhone 16 Pro Max",
-      image: "https://images.unsplash.com/photo-1565536421961-1f165e0c981e",
-      additionalImages: ["https://images.unsplash.com/photo-1591337676887-a217a6970a8a", "https://images.unsplash.com/photo-1607936854279-55e8a4c64888"],
+      image: "/products/iPhone 16 Pro Max.jpg",
+      additionalImages: ["/products/iPhone 16 Pro.webp", "/products/iPhone 16 Plus.jpg"],
       features: [
         "A18 Pro chip",
         "48MP Pro camera system",
@@ -65,8 +65,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Samsung",
       name: "Galaxy S25 Ultra",
-      image: "/samsung-galaxy-s25-ultra.jpg",
-      additionalImages: ["/samsung-galaxy-s25-ultra-product-photo.jpg", "/galaxy-s25-ultra.png"],
+      image: "/products/Galaxy S25 Ultra.jpg",
+      additionalImages: ["/products/Galaxy S25+.jpg", "/products/Galaxy S25.jpg"],
       features: [
         "Snapdragon 8 Elite",
         "200MP main camera",
@@ -78,8 +78,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Samsung",
       name: "Galaxy S25+",
-      image: "/galaxy-s25-plus.jpg",
-      additionalImages: ["/galaxy-s25.png", "/samsung-galaxy-s25-ultra.jpg"],
+      image: "/products/Galaxy S25+.jpg",
+      additionalImages: ["/products/Galaxy S25.jpg", "/products/Galaxy S25 Ultra.jpg"],
       features: [
         "Snapdragon 8 Elite",
         "50MP triple camera",
@@ -91,8 +91,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Samsung",
       name: "Galaxy S25",
-      image: "/galaxy-s25.png",
-      additionalImages: ["/galaxy-s25-.jpg", "/galaxy-s25-plus.jpg"],
+      image: "/products/Galaxy S25.jpg",
+      additionalImages: ["/products/Galaxy S25+.jpg", "/products/Galaxy S25 Ultra.jpg"],
       features: [
         "Snapdragon 8 Elite",
         "50MP triple camera",
@@ -104,8 +104,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Samsung",
       name: "Galaxy Z Fold6",
-      image: "/galaxy-z-fold6.png",
-      additionalImages: ["/samsung-galaxy-s25-ultra-product-photo.jpg", "/galaxy-s25-ultra.png"],
+      image: "/products/Galaxy Z Fold6.jpg",
+      additionalImages: ["/products/Galaxy S25 Ultra.jpg", "/products/Galaxy S25+.jpg"],
       features: [
         "Snapdragon 8 Gen 3",
         "50MP triple camera",
@@ -117,8 +117,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Samsung",
       name: "Galaxy Z Flip6",
-      image: "/galaxy-z-flip6.jpg",
-      additionalImages: ["/galaxy-z-fold6.png", "/samsung-galaxy-s25-ultra.jpg"],
+      image: "/products/Galaxy Z Flip6.jpg",
+      additionalImages: ["/products/Galaxy Z Fold6.jpg", "/products/Galaxy S25 Ultra.jpg"],
       features: [
         "Snapdragon 8 Gen 3",
         "50MP dual camera",
@@ -130,22 +130,22 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Samsung",
       name: "Galaxy A55 5G",
-      image: "/samsung-galaxy-f55-5g.jpg",
-      additionalImages: ["/samsung-galaxy-a26-5g.jpg", "/galaxy-s25-.jpg"],
+      image: "/products/Galaxy A55 5G.jpg",
+      additionalImages: ["/products/Galaxy A35 5G.jpg", "/products/Galaxy M55 5G.jpg"],
       features: ["Exynos 1480", "50MP OIS camera", "6.6-inch Super AMOLED", "5000mAh battery", "25W fast charging"],
     },
     {
       brand: "Samsung",
       name: "Galaxy A35 5G",
-      image: "/samsung-galaxy-a26-5g.jpg",
-      additionalImages: ["/samsung-galaxy-f55-5g.jpg", "/galaxy-s25-.jpg"],
+      image: "/products/Galaxy A35 5G.jpg",
+      additionalImages: ["/products/Galaxy A55 5G.jpg", "/products/Galaxy M55 5G.jpg"],
       features: ["Exynos 1380", "50MP main camera", "6.6-inch Super AMOLED", "5000mAh battery", "25W charging"],
     },
     {
       brand: "Samsung",
       name: "Galaxy M55 5G",
-      image: "/samsung-galaxy-f55-5g.jpg",
-      additionalImages: ["/samsung-galaxy-a26-5g.jpg", "/galaxy-s25.png"],
+      image: "/products/Galaxy M55 5G.jpg",
+      additionalImages: ["/products/Galaxy A55 5G.jpg", "/products/Galaxy A35 5G.jpg"],
       features: [
         "Snapdragon 7 Gen 1",
         "50MP triple camera",
@@ -159,8 +159,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Realme",
       name: "GT7 Pro 5G",
-      image: "/realme-gt7-pro.jpg",
-      additionalImages: ["/realme-gt7-pro-product-photo.jpg", "/realme-gt7-pro-5g.png"],
+      image: "/products/GT7 Pro 5G.jpg",
+      additionalImages: ["/products/GT7 5G.jpg", "/products/GT7T 5G.jpg"],
       features: [
         "Snapdragon 8 Elite",
         "50MP periscope camera",
@@ -172,8 +172,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Realme",
       name: "GT7T 5G",
-      image: "/realme-gt7t-5g.png",
-      additionalImages: ["/realme-gt7-pro.jpg", "/realme-gt7-5g.png"],
+      image: "/products/GT7T 5G.jpg",
+      additionalImages: ["/products/GT7 Pro 5G.jpg", "/products/GT7 5G.jpg"],
       features: [
         "Snapdragon 8 Gen 3",
         "50MP triple camera",
@@ -185,29 +185,29 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Realme",
       name: "GT7 5G",
-      image: "/realme-gt7-5g.png",
-      additionalImages: ["/realme-gt7-pro.jpg", "/realme-gt7t-5g.png"],
+      image: "/products/GT7 5G.jpg",
+      additionalImages: ["/products/GT7 Pro 5G.jpg", "/products/GT7T 5G.jpg"],
       features: ["Snapdragon 8 Gen 3", "50MP main camera", "6.7-inch AMOLED", "5400mAh battery", "80W SuperVOOC"],
     },
     {
       brand: "Realme",
       name: "Narzo 80 Pro 5G",
-      image: "/realme-narzo-80-pro-5g.jpg",
-      additionalImages: ["/realme-gt7-pro.jpg", "/realme-gt7-5g.png"],
+      image: "/products/Narzo 80 Pro 5G.jpg",
+      additionalImages: ["/products/GT7 Pro 5G.jpg", "/products/Narzo 80x 5G.jpg"],
       features: ["Dimensity 7050", "50MP AI camera", "6.67-inch AMOLED", "5000mAh battery", "67W SuperVOOC"],
     },
     {
       brand: "Realme",
       name: "Narzo 80x 5G",
-      image: "/realme-p4-5g.jpg",
-      additionalImages: ["/realme-p4-pro-5g.jpg", "/realme-gt-neo-7-se.jpg"],
+      image: "/products/Narzo 80x 5G.jpg",
+      additionalImages: ["/products/Narzo 80 Pro 5G.jpg", "/products/GT7 5G.jpg"],
       features: ["Dimensity 6300", "50MP dual camera", "6.72-inch display", "5000mAh battery", "45W fast charging"],
     },
     {
       brand: "Realme",
       name: "15 Pro 5G",
-      image: "/realme-15-pro-5g.jpg",
-      additionalImages: ["/realme-gt7-pro.jpg", "/realme-gt-neo-7-se.jpg"],
+      image: "/products/15 Pro 5G.jpg",
+      additionalImages: ["/products/15T 5G.jpg", "/products/15 Pro.jpg"],
       features: [
         "Snapdragon 6 Gen 1",
         "50MP OIS camera",
@@ -219,29 +219,29 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Realme",
       name: "15T 5G",
-      image: "/realme-12x-5g.jpg",
-      additionalImages: ["/realme-15-pro-5g.jpg", "/realme-gt-neo-7-se.jpg"],
+      image: "/products/15T 5G.jpg",
+      additionalImages: ["/products/15 Pro 5G.jpg", "/products/15.jpg"],
       features: ["Dimensity 7300", "50MP main camera", "6.67-inch AMOLED", "5000mAh battery", "45W fast charging"],
     },
     {
       brand: "Realme",
       name: "C75 5G",
-      image: "/realme-p4-pro-5g.jpg",
-      additionalImages: ["/realme-12x-5g.jpg", "/realme-gt-neo-7-se.jpg"],
+      image: "/products/C75 5G.jpg",
+      additionalImages: ["/products/C65 5G.jpg", "/products/GT7 5G.jpg"],
       features: ["Dimensity 6300", "50MP AI camera", "6.72-inch display", "6000mAh battery", "45W fast charging"],
     },
     {
       brand: "Realme",
       name: "C65 5G",
-      image: "/realme-12x-5g.jpg",
-      additionalImages: ["/realme-p4-5g.jpg", "/realme-p4-pro-5g.jpg"],
+      image: "/products/C65 5G.jpg",
+      additionalImages: ["/products/C75 5G.jpg", "/products/15T 5G.jpg"],
       features: ["Dimensity 6300", "50MP AI camera", "6.67-inch display", "5000mAh battery", "15W charging"],
     },
     {
       brand: "Realme",
       name: "13+ 5G",
-      image: "/realme-gt-neo-7-se.jpg",
-      additionalImages: ["/realme-15-pro-5g.jpg", "/realme-p4-pro-5g.jpg"],
+      image: "/products/13+ 5G.jpg",
+      additionalImages: ["/products/13 5G.jpg", "/products/GT7 5G.jpg"],
       features: [
         "Dimensity 7300",
         "50MP LYT-600 camera",
@@ -253,8 +253,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Realme",
       name: "13 5G",
-      image: "/realme-p4-5g.jpg",
-      additionalImages: ["/realme-12x-5g.jpg", "/realme-gt-neo-7-se.jpg"],
+      image: "/products/13 5G.jpg",
+      additionalImages: ["/products/13+ 5G.jpg", "/products/GT7 5G.jpg"],
       features: ["Dimensity 6300", "50MP AI camera", "6.72-inch display", "5000mAh battery", "45W fast charging"],
     },
   ],
@@ -262,7 +262,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Oppo",
       name: "Find X8 Pro",
-      image: "/oppo-find-x8-pro.jpg",
+      image: "/products/Find X8 Pro.jpg",
+      additionalImages: ["/products/Find X8.jpg", "/products/Find X8 Ultra (2025).jpg"],
       features: [
         "Dimensity 9400",
         "50MP Hasselblad camera",
@@ -274,13 +275,15 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Oppo",
       name: "Find X8",
-      image: "/oppo-find-x8.jpg",
+      image: "/products/Find X8.jpg",
+      additionalImages: ["/products/Find X8 Pro.jpg", "/products/Find X8s  X8 Plus (2025).jpg"],
       features: ["Dimensity 9400", "50MP triple camera", "6.59-inch AMOLED", "5630mAh battery", "80W fast charging"],
     },
     {
       brand: "Oppo",
       name: "Find X8 Ultra (2025)",
-      image: "/oppo-find-x8-ultra.jpg",
+      image: "/products/Find X8 Ultra (2025).jpg",
+      additionalImages: ["/products/Find X8 Pro.jpg", "/products/Find X8s  X8 Plus (2025).jpg"],
       features: [
         "Snapdragon 8 Elite",
         "200MP periscope camera",
@@ -292,13 +295,15 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Oppo",
       name: "Find X8s / X8 Plus (2025)",
-      image: "/oppo-find-x8s.jpg",
+      image: "/products/Find X8s  X8 Plus (2025).jpg",
+      additionalImages: ["/products/Find X8 Ultra (2025).jpg", "/products/Find X8.jpg"],
       features: ["Dimensity 9400+", "50MP Hasselblad system", "6.7-inch AMOLED", "5800mAh battery", "100W charging"],
     },
     {
       brand: "Oppo",
       name: "Reno 14 Pro",
-      image: "/oppo-reno-14-pro.jpg",
+      image: "/products/Reno 14 Pro.jpg",
+      additionalImages: ["/products/Reno 14.jpg", "/products/Reno 13 Pro.jpg"],
       features: [
         "Dimensity 7300",
         "50MP portrait camera",
@@ -310,13 +315,15 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Oppo",
       name: "Reno 14",
-      image: "/oppo-reno-14.jpg",
+      image: "/products/Reno 14.jpg",
+      additionalImages: ["/products/Reno 14 Pro.jpg", "/products/Reno 13.jpg"],
       features: ["Snapdragon 7 Gen 3", "50MP main camera", "6.7-inch AMOLED", "5000mAh battery", "80W fast charging"],
     },
     {
       brand: "Oppo",
       name: "Reno 13 Pro",
-      image: "/oppo-reno-13-pro.jpg",
+      image: "/products/Reno 13 Pro.jpg",
+      additionalImages: ["/products/Reno 13.jpg", "/products/Reno 14 Pro.jpg"],
       features: [
         "Snapdragon 8+ Gen 1",
         "50MP IMX890 camera",
@@ -328,13 +335,15 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Oppo",
       name: "Reno 13",
-      image: "/oppo-reno-13.jpg",
+      image: "/products/Reno 13.jpg",
+      additionalImages: ["/products/Reno 13 Pro.jpg", "/products/Reno 14.jpg"],
       features: ["Snapdragon 778G", "64MP periscope camera", "6.7-inch AMOLED", "4500mAh battery", "67W fast charging"],
     },
     {
       brand: "Oppo",
       name: "Find N5 (Foldable)",
-      image: "/oppo-find-n5.jpg",
+      image: "/products/Find N5 (Foldable).jpg",
+      additionalImages: ["/products/Find X8 Ultra (2025).jpg", "/products/Find X8 Pro.jpg"],
       features: [
         "Snapdragon 8 Gen 4",
         "50MP Hasselblad camera",
@@ -346,19 +355,22 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Oppo",
       name: "A3 Pro 5G",
-      image: "/oppo-a3-pro-5g.jpg",
+      image: "/products/A3 Pro 5G.jpg",
+      additionalImages: ["/products/A80 5G.jpg", "/products/K12x 5G.jpg"],
       features: ["Snapdragon 695", "50MP AI camera", "6.7-inch AMOLED", "5000mAh battery", "67W SuperVOOC"],
     },
     {
       brand: "Oppo",
       name: "A80 5G",
-      image: "/oppo-a80-5g.jpg",
+      image: "/products/A80 5G.jpg",
+      additionalImages: ["/products/A3 Pro 5G.jpg", "/products/K12x 5G.jpg"],
       features: ["Dimensity 6300", "50MP dual camera", "6.67-inch display", "5100mAh battery", "45W fast charging"],
     },
     {
       brand: "Oppo",
       name: "K12x 5G",
-      image: "/oppo-k12x-5g.jpg",
+      image: "/products/K12x 5G.jpg",
+      additionalImages: ["/products/A80 5G.jpg", "/products/A3 Pro 5G.jpg"],
       features: ["Snapdragon 695", "50MP main camera", "6.67-inch display", "5100mAh battery", "80W SuperVOOC"],
     },
   ],
@@ -366,8 +378,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Vivo",
       name: "X100 Ultra",
-      image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd",
-      additionalImages: ["https://images.unsplash.com/photo-1585060544812-6b45742d762f", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      image: "/products/X100 Ultra.jpg",
+      additionalImages: ["/products/X100 Pro.jpg", "/products/X100.jpg"],
       features: [
         "Snapdragon 8 Gen 3",
         "200MP Zeiss camera",
@@ -379,8 +391,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Vivo",
       name: "X100 Pro",
-      image: "https://images.unsplash.com/photo-1585060544812-6b45742d762f",
-      additionalImages: ["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      image: "/products/X100 Pro.jpg",
+      additionalImages: ["/products/X100 Ultra.jpg", "/products/X100.jpg"],
       features: [
         "Dimensity 9300",
         "50MP Zeiss camera",
@@ -392,15 +404,15 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Vivo",
       name: "X100",
-      image: "https://images.unsplash.com/photo-1570891836654-d4961a7b6929",
-      additionalImages: ["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd", "https://images.unsplash.com/photo-1585060544812-6b45742d762f"],
+      image: "/products/X100.jpg",
+      additionalImages: ["/products/X100 Ultra.jpg", "/products/X100 Pro.jpg"],
       features: ["Dimensity 9300", "50MP OIS camera", "6.78-inch AMOLED", "5000mAh battery", "120W fast charging"],
     },
     {
       brand: "Vivo",
       name: "V40 Pro",
-      image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd",
-      additionalImages: ["https://images.unsplash.com/photo-1585060544812-6b45742d762f", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      image: "/products/V40 Pro.jpg",
+      additionalImages: ["/products/V40.jpg", "/products/X100.jpg"],
       features: [
         "Dimensity 9200+",
         "50MP Zeiss camera",
@@ -412,22 +424,22 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Vivo",
       name: "V40",
-      image: "https://images.unsplash.com/photo-1585060544812-6b45742d762f",
-      additionalImages: ["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      image: "/products/V40.jpg",
+      additionalImages: ["/products/V40 Pro.jpg", "/products/T3 Ultra 5G.jpg"],
       features: ["Snapdragon 7 Gen 3", "50MP OIS camera", "6.78-inch AMOLED", "5500mAh battery", "80W charging"],
     },
     {
       brand: "Vivo",
       name: "T3 Ultra 5G",
-      image: "https://images.unsplash.com/photo-1570891836654-d4961a7b6929",
-      additionalImages: ["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd", "https://images.unsplash.com/photo-1585060544812-6b45742d762f"],
+      image: "/products/T3 Ultra 5G.jpg",
+      additionalImages: ["/products/T3 Pro 5G.jpg", "/products/V40.jpg"],
       features: ["Dimensity 9200+", "50MP Sony IMX921", "6.78-inch curved AMOLED", "5500mAh battery", "80W charging"],
     },
     {
       brand: "Vivo",
       name: "T3 Pro 5G",
-      image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd",
-      additionalImages: ["https://images.unsplash.com/photo-1585060544812-6b45742d762f", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      image: "/products/T3 Pro 5G.jpg",
+      additionalImages: ["/products/T3 Ultra 5G.jpg", "/products/V40 Pro.jpg"],
       features: [
         "Snapdragon 7 Gen 3",
         "50MP Sony camera",
@@ -440,7 +452,7 @@ const byBrand: Record<string, Product[]> = {
       brand: "Vivo",
       name: "Y28 5G",
       image: "https://images.unsplash.com/photo-1585060544812-6b45742d762f",
-      additionalImages: ["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      additionalImages: ["/products/Y28 5G.jpg", "/products/T3 Pro 5G.jpg"],
       features: ["Dimensity 6020", "50MP main camera", "6.68-inch display", "6000mAh battery", "44W fast charging"],
     },
   ],
@@ -448,8 +460,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "OnePlus",
       name: "13 5G",
-      image: "https://images.unsplash.com/photo-1606041011872-596597976b25",
-      additionalImages: ["https://images.unsplash.com/photo-1606041008023-472dfb5e530f", "https://images.unsplash.com/photo-1606041008023-472dfb5e530f"],
+      image: "/products/one plus 13 5G.jpg",
+      additionalImages: ["/products/13R 5G.jpg", "/products/13+ 5G.jpg"],
       features: [
         "Snapdragon 8 Elite",
         "50MP Hasselblad camera",
@@ -461,8 +473,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "OnePlus",
       name: "13R 5G",
-      image: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f",
-      additionalImages: ["https://images.unsplash.com/photo-1606041011872-596597976b25", "https://images.unsplash.com/photo-1606041008023-472dfb5e530f"],
+      image: "/products/13R 5G.jpg",
+      additionalImages: ["/products/one plus 13 5G.jpg", "/products/13+ 5G.jpg"],
       features: [
         "Snapdragon 8 Gen 3",
         "50MP Sony LYT-700",
@@ -473,9 +485,22 @@ const byBrand: Record<string, Product[]> = {
     },
     {
       brand: "OnePlus",
+      name: "13+ 5G",
+      image: "/products/13+ 5G.jpg",
+      additionalImages: ["/products/one plus 13 5G.jpg", "/products/13R 5G.jpg"],
+      features: [
+        "Snapdragon 8 Gen 3",
+        "50MP Hasselblad camera",
+        "6.82-inch LTPO AMOLED",
+        "5400mAh battery",
+        "100W SuperVOOC",
+      ],
+    },
+    {
+      brand: "OnePlus",
       name: "12 5G",
-      image: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f",
-      additionalImages: ["https://images.unsplash.com/photo-1606041011872-596597976b25", "https://images.unsplash.com/photo-1606041008023-472dfb5e530f"],
+      image: "/products/12 5G.jpg",
+      additionalImages: ["/products/13+ 5G.jpg", "/products/13R 5G.jpg"],
       features: [
         "Snapdragon 8 Gen 3",
         "50MP Hasselblad camera",
@@ -487,8 +512,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "OnePlus",
       name: "Nord CE4 5G",
-      image: "https://images.unsplash.com/photo-1606041011872-596597976b25",
-      additionalImages: ["https://images.unsplash.com/photo-1606041008023-472dfb5e530f", "https://images.unsplash.com/photo-1606041008023-472dfb5e530f"],
+      image: "/products/Nord CE4 5G.jpg",
+      additionalImages: ["/products/12 5G.jpg", "/products/13+ 5G.jpg"],
       features: ["Snapdragon 7 Gen 3", "50MP LYT-600 camera", "6.7-inch AMOLED", "5500mAh battery", "100W SuperVOOC"],
     },
   ],
@@ -496,8 +521,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Xiaomi",
       name: "15 Pro",
-      image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97",
-      additionalImages: ["https://images.unsplash.com/photo-1546054454-aa26e2b734c7", "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"],
+      image: "/products/15 Pro.jpg",
+      additionalImages: ["/products/15.jpg", "/products/14 Ultra.jpg"],
       features: [
         "Snapdragon 8 Elite",
         "50MP Leica camera",
@@ -509,8 +534,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Xiaomi",
       name: "15",
-      image: "https://images.unsplash.com/photo-1546054454-aa26e2b734c7",
-      additionalImages: ["https://images.unsplash.com/photo-1598327105666-5b89351aff97", "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"],
+      image: "/products/15.jpg",
+      additionalImages: ["/products/15 Pro.jpg", "/products/14 Ultra.jpg"],
       features: [
         "Snapdragon 8 Elite",
         "50MP Leica triple camera",
@@ -522,8 +547,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Xiaomi",
       name: "14 Ultra",
-      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
-      additionalImages: ["https://images.unsplash.com/photo-1598327105666-5b89351aff97", "https://images.unsplash.com/photo-1546054454-aa26e2b734c7"],
+      image: "/products/14 Ultra.jpg",
+      additionalImages: ["/products/15 Pro.jpg", "/products/15.jpg"],
       features: [
         "Snapdragon 8 Gen 3",
         "50MP Leica quad camera",
@@ -535,8 +560,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Xiaomi",
       name: "Redmi Note 14 Pro+ 5G",
-      image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97",
-      additionalImages: ["https://images.unsplash.com/photo-1546054454-aa26e2b734c7", "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"],
+      image: "/products/Redmi Note 14 Pro+ 5G.jpg",
+      additionalImages: ["/products/Redmi Note 14 Pro 5G.jpg", "/products/14 Ultra.jpg"],
       features: [
         "Snapdragon 7s Gen 3",
         "200MP OIS camera",
@@ -548,8 +573,8 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Xiaomi",
       name: "Redmi Note 14 Pro 5G",
-      image: "https://images.unsplash.com/photo-1546054454-aa26e2b734c7",
-      additionalImages: ["https://images.unsplash.com/photo-1598327105666-5b89351aff97", "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"],
+      image: "/products/Redmi Note 14 Pro 5G.jpg",
+      additionalImages: ["/products/Redmi Note 14 Pro+ 5G.jpg", "/products/15.jpg"],
       features: [
         "Dimensity 7300",
         "50MP OIS camera",
@@ -563,22 +588,22 @@ const byBrand: Record<string, Product[]> = {
     {
       brand: "Nothing",
       name: "Phone (2a) Plus",
-      image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd",
-      additionalImages: ["https://images.unsplash.com/photo-1585060544812-6b45742d762f", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      image: "/products/Phone (2a) Plus.jpg",
+      additionalImages: ["/products/Phone (2a).jpg", "/products/Phone (2).jpg"],
       features: ["Dimensity 7350 Pro", "50MP dual camera", "6.7-inch LTPO AMOLED", "5000mAh battery", "50W charging"],
     },
     {
       brand: "Nothing",
       name: "Phone (2a)",
-      image: "https://images.unsplash.com/photo-1585060544812-6b45742d762f",
-      additionalImages: ["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd", "https://images.unsplash.com/photo-1570891836654-d4961a7b6929"],
+      image: "/products/Phone (2a).jpg",
+      additionalImages: ["/products/Phone (2a) Plus.jpg", "/products/Phone (2).jpg"],
       features: ["Dimensity 7200 Pro", "50MP main camera", "6.7-inch AMOLED", "5000mAh battery", "45W fast charging"],
     },
     {
       brand: "Nothing",
       name: "Phone (2)",
-      image: "https://images.unsplash.com/photo-1570891836654-d4961a7b6929",
-      additionalImages: ["https://images.unsplash.com/photo-1592899677977-9c10ca588bbd", "https://images.unsplash.com/photo-1585060544812-6b45742d762f"],
+      image: "/products/Phone (2).jpg",
+      additionalImages: ["/products/Phone (2a) Plus.jpg", "/products/Phone (2a).jpg"],
       features: [
         "Snapdragon 8+ Gen 1",
         "50MP dual camera",
