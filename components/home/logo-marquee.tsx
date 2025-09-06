@@ -10,23 +10,17 @@ export function LogoMarquee() {
   const logos = [
     { name: "Apple", content: "image", color: "text-neutral-300", image: "/apple-logo.png" },
     { name: "Samsung", content: "image", color: "text-neutral-300", image: "/samsung-logo.png" },
+    { name: "Vivo", content: "image", color: "text-neutral-300", image: "/vivo-logo.jpg" },
     { name: "Realme", content: "image", color: "text-neutral-300", image: "/realme-logo.png" },
     { name: "Oppo", content: "image", color: "text-neutral-300", image: "/oppo-logo.jpg" },
-    { name: "Vivo", content: "image", color: "text-neutral-300", image: "/vivo-logo.jpg" },
-    { name: "OnePlus", content: "image", color: "text-neutral-300", image: "/oneplus-logo.jpg" },
-    { name: "Xiaomi", content: "image", color: "text-neutral-300", image: "/xiaomi-logo.jpg" },
-    { name: "Nothing", content: "image", color: "text-neutral-300", image: "/nothing-logo.jpg" },
   ]
 
   const secondRowLogos = [
-    { name: "Motorola", content: "image", color: "text-neutral-300", image: "/motorola-logo.jpg" },
-    { name: "Nokia", content: "image", color: "text-neutral-300", image: "/nokia-logo.jpg" },
-    { name: "Honor", content: "image", color: "text-neutral-300", image: "/honor-logo.jpg" },
-    { name: "Poco", content: "image", color: "text-neutral-300", image: "/poco-logo.jpg" },
-    { name: "Redmi", content: "image", color: "text-neutral-300", image: "/redmi-logo.jpg" },
-    { name: "iQOO", content: "image", color: "text-neutral-300", image: "/iqoo-logo.jpg" },
-    { name: "CMF", content: "image", color: "text-neutral-300", image: "/cmf-logo.jpg" },
-    { name: "Infinix", content: "image", color: "text-neutral-300", image: "/infinix-logo.jpg" },
+    { name: "Apple", content: "image", color: "text-neutral-300", image: "/apple-logo.png" },
+    { name: "Samsung", content: "image", color: "text-neutral-300", image: "/samsung-logo.png" },
+    { name: "Vivo", content: "image", color: "text-neutral-300", image: "/vivo-logo.jpg" },
+    { name: "Realme", content: "image", color: "text-neutral-300", image: "/realme-logo.png" },
+    { name: "Oppo", content: "image", color: "text-neutral-300", image: "/oppo-logo.jpg" },
   ]
 
   const LogoCard = ({ logo, rowId }: { logo: any; rowId: string }) => (
