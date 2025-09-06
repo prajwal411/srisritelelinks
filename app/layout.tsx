@@ -40,8 +40,7 @@ export default function RootLayout({
           {/* Client components properly wrapped in ThemeProvider */}
           <DynamicScripts />
           <div className="fixed inset-0 z-0 bg-black">
-            <Plasma color="#8B00FF" speed={1.2} direction="forward" scale={2.5} opacity={0.7} mouseInteractive={true} />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(45deg, rgba(138,43,226,0.2), rgba(75,0,130,0.2))', mixBlendMode: 'overlay' }}></div>
+            <Plasma color="#6d28d9" speed={1.0} direction="forward" scale={2.0} opacity={0.5} mouseInteractive={true} />
           </div>
           <div className="relative z-10 bg-transparent">
             {children}
