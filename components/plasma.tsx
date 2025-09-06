@@ -96,14 +96,14 @@ void main() {
   fragColor = vec4(finalColor, alpha);
 }`
 
-export const Plasma: React.FC<PlasmaProps> = ({
-  color = "#ffffff",
-  speed = 1,
+function Plasma({
+  color = "#4338ca",
+  speed = 1.2,
   direction = "forward",
-  scale = 1,
-  opacity = 1,
-  mouseInteractive = true,
-}) => {
+  scale = 1.5,
+  opacity = 0.25,
+  mouseInteractive = false,
+}: PlasmaProps): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mousePos = useRef({ x: 0, y: 0 })
 

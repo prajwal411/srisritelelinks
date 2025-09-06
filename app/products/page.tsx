@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { SiteHeader } from "@/components/site-header"
 import { AppverseFooter } from "@/components/appverse-footer"
-import { FloatingButtons } from "@/components/floating-buttons"
 
 
 type Product = {
@@ -981,7 +980,6 @@ export default function ProductsPage() {
         </section>
       </main>
       <AppverseFooter />
-      <FloatingButtons />
     </>
   )
 }

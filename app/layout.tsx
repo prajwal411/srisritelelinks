@@ -6,6 +6,7 @@ import { Inter } from "next/font/google"
 import Plasma from "@/components/plasma"
 import DynamicScripts from "@/components/dynamic-scripts"
 import { ThemeProvider } from "@/components/theme-provider"
+import { FloatingButtons } from "@/components/floating-buttons"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
@@ -39,9 +40,13 @@ export default function RootLayout({
           {/* Client components properly wrapped in ThemeProvider */}
           <DynamicScripts />
           <div className="fixed inset-0 z-0 bg-black">
-            <Plasma color="#8b5cf6" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />
+            <Plasma color="#8B00FF" speed={1.2} direction="forward" scale={2.5} opacity={0.7} mouseInteractive={true} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(45deg, rgba(138,43,226,0.2), rgba(75,0,130,0.2))', mixBlendMode: 'overlay' }}></div>
           </div>
-          <div className="relative z-10 bg-transparent">{children}</div>
+          <div className="relative z-10 bg-transparent">
+            {children}
+            <FloatingButtons />
+          </div>
         </ThemeProvider>
       </body>
     </html>
